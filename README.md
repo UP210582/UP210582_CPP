@@ -1,1 +1,6 @@
-# Hello, and welcome to the Los Pollos Hermanos family! My name is Leonardo, but you can call me Leo.
+# Welcome to my first *repository*
+## My username is **UP210582**
+```ini
+[Polytechnic University of Hot Waters]
+[computerstystems engineer]
+```
