@@ -15,7 +15,7 @@ Last Modification: 12/09/2022
 
 int main()
 {
-	std::cout << "The Typical Hello World !! Written from C++ Hello World !!" ; // Write a message on the screen
+	std::cout << "The Typical Hello World !! Written from C++ Hello World !!" << std::endl; // Write a message on the screen
 
 	/*
 	 If there are no errors, the program ends its execution.
