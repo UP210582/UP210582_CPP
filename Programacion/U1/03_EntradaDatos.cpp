@@ -2,7 +2,7 @@
 Date: 21/09/2022
 Author: Leonardo Asuencio Martinez Torres
 Email: up210582@alumnos.upa.edu.mx
-Description: My first program in C++ (The typical Hello World)
+Description: Entrada de datos
 Last Modification: 21/09/2022
 */
 
@@ -32,8 +32,9 @@ int main (){
     printf("Using printf and scanf funcion\n");
     printf("Enter an integer data type: ");
     scanf("%d", &entero);
-    printf("The data entered is: %i \n", entero);
+    printf("The data entered is: %c \n", entero);
 
     //Being a function, it must return a value in this case 0
     return 0;
+
 }
