@@ -11,10 +11,10 @@ Last Modification: 15/09/2022
 //Library for the use of printf and scanf
 #include <stdio.h>
 
-//Use of namespace for evitar el std::
+//Use of namespace for avoid el std::
 using namespace std;
 
-//Principal Function of type entero
+//Principal Function of type entire
 int main (){
 
     int entero = 4;
@@ -24,7 +24,7 @@ int main (){
 
     cout << "This program showed the types of data. \n";
     cout << "The number entero is: " << entero << endl;
-    cout << "The size of entero is: " << sizeof(entero) << "bytes" << endl;
+    cout << "The size of entire is: " << sizeof(entero) << "bytes" << endl;
     cout << "The float number is: " << flotante << endl;
     cout << "The size of the float is: " << sizeof(flotante) << "bytes" << endl;
     cout << "The number double is: " << grande << endl;
@@ -34,9 +34,9 @@ int main (){
 
     cout << "=====================" << endl;
 
-    printf("Usando la funcion printf\n");
-    printf("El numero entero es: %i \n", entero);
-    printf("El numero flotante es: %3.1f \n", flotante);
+    printf("Using the function printf\n");
+    printf("The entire number is": %i \n", entero);
+    printf("The float number is": %3.1f \n", flotante);
 
     //Al ser una funcion debe retornar un valor, en este caso es 0
     return 0;
