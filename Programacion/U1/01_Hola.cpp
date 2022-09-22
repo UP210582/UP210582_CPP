@@ -1,6 +1,6 @@
 /*
 Date: 12/09/2022
-Author: Leonardo Asuencio Martinez Torres
+Author: Leonardo Ausencio Martinez Torres
 Email: up210582@alumnos.upa.edu.mx
 Description: My first program in C++ (The typical Hello World)
 Last Modification: 15/09/2022

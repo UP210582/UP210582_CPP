@@ -1,6 +1,6 @@
 /* 
 Date: 15/09/2022
-Author: Leonardo Asuencio Martinez Torres
+Author: Leonardo Ausencio Martinez Torres
 Email: up210582@alumnos.upa.edu.mx
 Description: Type of Data
 Last Modification: 15/09/2022
