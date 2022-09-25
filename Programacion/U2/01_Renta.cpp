@@ -41,7 +41,7 @@ int main(){
 //the total of if improvised and the percentage that it occupies is printed
 
     cout << "You have to pay: $" << improviso << endl;
-    cout << "Your improvise is: " << descuento << "%" << endl;
+    cout << "Your tax is: " << descuento << "%" << endl;
 
 //Being a function it must return a value, in this case 0
     return 0;

@@ -14,4 +14,3 @@ A visual profile for Computerstystems Engineers .
 [Universidad Politecnica de Aguascalientes]
 [Computerstystems Engineer]
 ```
-
