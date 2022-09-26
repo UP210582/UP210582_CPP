@@ -13,17 +13,17 @@ in this code we can see that at the momento of starting to execute, it will ask 
 
 Below you will see different tests with the code so you can observe its operation
 
-Be the income with an entry of $9000
+Be the income with an entry of **$9000**
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Prueba1.png)
 
-Be the income with an entry of $19000
+Be the income with an entry of **$19000**
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Prueba2.png)
 
-Be the income with an entry of $34000
+Be the income with an entry of **$34000**
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Prueba3.png)
 
-Be the income with an entry of $59000
+Be the income with an entry of **$59000**
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Prueba4.png)
 
-Be the income with an entry of $70000
+Be the income with an entry of **$70000**
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Prueba5.png)
