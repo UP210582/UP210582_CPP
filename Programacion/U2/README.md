@@ -104,7 +104,7 @@ Unacceptable
 
 Acceptable
 
-![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Acceptable.png)
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Acceptable4.png)
 
 Merit
 
