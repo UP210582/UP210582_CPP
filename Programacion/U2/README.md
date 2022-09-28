@@ -42,3 +42,5 @@ Be the income with an entry of **$59000**
 
 Be the income with an entry of **$70000**
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Prueba5.png)
+
+**==================================================**
