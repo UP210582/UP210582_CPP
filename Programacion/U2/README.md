@@ -44,3 +44,47 @@ Be the income with an entry of **$70000**
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Prueba5.png)
 
 **=======================================================================================**
+Exersice 2
+
+Obtain if a user's score is unacceptable, acceptable and meritorious, in addition to indicating their bonus and how much it is equivalent to respectively depending on their score
+
+   cout << "What is the user score? ";
+    cin >> punto;
+
+    //If the score is 0.0
+
+    if(punto == 0.0){
+        cout << "Your level is Unacceptable \n";
+        beneficio = monto * punto;
+            cout << "Your benefit is: $" << beneficio << endl;
+
+    //If the score is 0.4
+
+    }
+    else if (punto == 0.4){
+        cout << "Your level is Acceptable \n";
+        beneficio = monto * punto;
+            cout << "Your benefit is: $" << beneficio << endl;
+
+    //If the score becomes greater than 1, it   cancels and asks the user to enter a valid score.
+
+    }
+    else if (punto > 1){
+        cout << "Please enter a valid score" << endl;
+    }
+
+    //If the score is greater than or equal to 0.6 but not greater than 1
+
+    else if (punto >= 0.6){
+        cout << "Your level is Merit \n";
+         beneficio = monto * punto;
+             cout << "Your benefit is: $" << beneficio << endl;
+    }
+
+    //If none of the conditions are met, it will proceed to ask for a valid score
+
+    else {
+        cout << "Please enter a valid score" << endl;
+    } 
+
+asdsafgdfhgdfsfad

@@ -2,7 +2,7 @@
 Date: 26/09/2022
 Author: Leonardo Ausencio Martinez Torres
 Email: up210582@alumnos.upa.edu.mx
-Description: obtencion de  imposivos
+Description: Puntuacion de usuario y bono
 Last Modification: 26/09/2022
 */
 
@@ -24,32 +24,46 @@ int main (){
     double monto = 2400;
     double beneficio = 0;
 
-    cout << "Cual es la puntuacion del empleado? ";
+    cout << "What is the user score? ";
     cin >> punto;
 
+//If the score is 0.0
+
     if(punto == 0.0){
-        cout << "Tu nivel es inaceptable \n";
+        cout << "Your level is Unacceptable \n";
         beneficio = monto * punto;
-            cout << "Tu beneficio  es de: " << beneficio << endl;
+            cout << "Your benefit is: $" << beneficio << endl;
+
+//If the score is 0.4
 
     }
     else if (punto == 0.4){
-        cout << "Tu nivel es Aceptable \n";
+        cout << "Your level is Acceptable \n";
         beneficio = monto * punto;
-            cout << "Tu beneficio  es de: " << beneficio << endl;
+            cout << "Your benefit is: $" << beneficio << endl;
+
+//If the score becomes greater than 1, it cancels and asks the user to enter a valid score.
 
     }
     else if (punto > 1){
-        cout << "Favor de ingresar una puntuacion aceptable" << endl;
+        cout << "Please enter a valid score" << endl;
     }
+
+//If the score is greater than or equal to 0.6 but not greater than 1
+
     else if (punto >= 0.6){
-        cout << "Tu nivel es Meritorio \n";
+        cout << "Your level is Merit \n";
          beneficio = monto * punto;
-             cout << "Tu beneficio  es de: " << beneficio << endl;
+             cout << "Your benefit is: $" << beneficio << endl;
     }
+
+//If none of the conditions are met, it will proceed to ask for a valid score
+
     else {
-        cout << "Favor de ingresar una puntuacion aceptable" << endl;
+        cout << "Please enter a valid score" << endl;
     }
+
+//Being a function, it must return a value in this case 0
 
 return 0;
 }
