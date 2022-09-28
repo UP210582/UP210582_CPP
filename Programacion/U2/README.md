@@ -99,15 +99,21 @@ Entering an intermediate value between 0.0 and 0.4 will give us a message which 
 ### Test
 
 Unacceptable
+
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Unacceptable.png)
 
 Acceptable
+
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Acceptable.png)
 
 Merit
+
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Merit6.png)
+
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Merit1.png)
 
 Invalid
+
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Invalid.png)
+
