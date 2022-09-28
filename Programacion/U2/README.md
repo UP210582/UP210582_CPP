@@ -48,7 +48,7 @@ Exersice 2
 
 Obtain if a user's score is unacceptable, acceptable and meritorious, in addition to indicating their bonus and how much it is equivalent to respectively depending on their score
 
-   cout << "What is the user score? ";
+    cout << "What is the user score? ";
     cin >> punto;
 
     //If the score is 0.0
