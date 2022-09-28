@@ -44,6 +44,7 @@ Be the income with an entry of **$70000**
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Prueba5.png)
 
 **=======================================================================================**
+
 Exersice 2
 
 Obtain if a user's score is unacceptable, acceptable and meritorious, in addition to indicating their bonus and how much it is equivalent to respectively depending on their score
@@ -87,4 +88,13 @@ Obtain if a user's score is unacceptable, acceptable and meritorious, in additio
         cout << "Please enter a valid score" << endl;
     } 
 
-asdsafgdfhgdfsfad
+### Explanation
+
+The user will have a score which goes from 0.0 to 1, the existing scores are 0.0 being equal to 0, 0.4 being equivalent to 40%, and from 0.6 to 1, 1 being equal to 100%
+
+Each score will be used to be multiplied by 2400 which is the bonus
+
+Entering an intermediate value between 0.0 and 0.4 will give us a message which will tell us that this score is invalid, it also gives this message when entering an intermediate value between 0.4 and 0.6
+
+### Test
+
