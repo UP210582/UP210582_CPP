@@ -177,3 +177,103 @@ Pay 5 bucks
 Pay 10 bucks
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Edad4.png)
 
+
+
+## Exercise 4
+
+### Create a Vegan Pizza or Regular Pizza
+
+In this program you will be able to choose between several ingredients for a pizza, the ingredients change depending on whether it is vegan or normal, it also comes with cheese and tomato sauce included, you can only choose one ingredient
+
+```c++
+     // asks the user about which pizza he wants
+
+    cout << "What type of pizza do you want \n";
+    cout << "Choose whit 1 and 2 \n";
+    cout << "Vegetarian Pizza is 1 \n";
+    cout << "Normal Pizza is 2 \n";
+    cin >> typo;
+
+    // if the user choose a Vegetarian pizza, get the all ingredients
+
+    if (typo == 1)
+    {
+        cout << "You select a Vegetarian Pizza \n";
+        cout << "Choose a ingredient \n";
+        cout << "You can chose pepper or tofu \n";
+        cout << "Choose whit 1 and 2 \n";
+        cout << "Pepper is 1 \n";
+        cout << "Tofu is 2 \n";
+        cin >> ingredientes;
+
+        // vegetarian pizza ingredients
+
+        if (ingredientes == 1)
+        {
+            cout << "You choose pepper \n";
+            cout << "And your pizza include Pepper, Soya cheese and Tomato sauce \n";
+            cout << "\n";
+        }
+        else if (ingredientes == 2)
+        {
+            cout << "You choose Tofu \n";
+            cout << "And your pizza include Tofu, Soya cheese and Tomato sauce \n";
+            cout << "\n";
+        }
+    }
+
+    // if the user choose a Regular pizza, get the all ingredients
+
+    if (typo == 2)
+    {
+        cout << "You select a Normal Pizza \n";
+        cout << "Choose a ingredient \n";
+        cout << "You can chose pepperoni, ham or salmon \n";
+        cout << "Choose whit 1, 2, 3 \n";
+        cout << "Pepperoni is 1 \n";
+        cout << "Ham is 2 \n";
+        cout << "Salmon is 3 \n";
+        cout << "\n";
+        cin >> ingredientes;
+
+        // regular pizza ingredients
+
+        if (ingredientes == 1)
+        {
+            cout << "You choose pepperoni \n";
+            cout << "And your pizza include Pepperoni, mozarella and Tomato sauce \n";
+            cout << "\n";
+        }
+        else if (ingredientes == 2)
+        {
+            cout << "You choose ham \n";
+            cout << "And your pizza include ham, mozarella and Tomato sauce \n";
+            cout << "\n";
+        }
+        else if (ingredientes == 3)
+        {
+            cout << "You choose salmon \n";
+            cout << "And your pizza include salmon, mozarella and Tomato sauce \n";
+            cout << "\n";
+        }
+    }
+
+    // message after assembling your pizza
+    
+    cout << "your pizza will be ready in less than an eagle sings \n";
+    cout << "THANK YOU FOR visiting Pizzas Upa";
+```
+
+Once the order is taken, the console will print your chosen pizza as well as the ingredients assigned to it.
+
+### Test
+
+Vegan Pizza
+
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Pizza1.png)
+
+
+Regular Pizza
+
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Pizza2.png)
+

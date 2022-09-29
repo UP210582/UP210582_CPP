@@ -27,7 +27,7 @@ int main()
     cout << "Normal Pizza is 2 \n";
     cin >> typo;
 
-    // vegetarian pizza
+    // if the user choose a Vegetarian pizza, get the all ingredients
 
     if (typo == 1)
     {
@@ -55,7 +55,7 @@ int main()
         }
     }
 
-    // regular Pizza
+    // if the user choose a Regular pizza, get the all ingredients
 
     if (typo == 2)
     {
@@ -92,10 +92,13 @@ int main()
     }
 
     // message after assembling your pizza
+
     cout << "your pizza will be ready in less than an eagle sings \n";
     cout << "THANK YOU FOR visiting Pizzas Upa";
     cout << "\n";
     cout << "\n";
     cout << "\n";
+
+    //Being a function, it must return a value in this case 0
     return 0;
 }
