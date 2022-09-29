@@ -162,3 +162,18 @@ To make this calculation, the program takes the age from 0 to 3 for a free entra
 
 ### Test
 
+Pay 0 bucks
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Edad5.png)
+
+Pay 5 bucks
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Edad1.png)
+
+Pay 5 bucks
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Edad2.png)
+
+Pay 5 bucks
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Edad3.png)
+
+Pay 10 bucks
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Edad4.png)
+
