@@ -129,3 +129,36 @@ Invalid
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Invalid.png)
 
+
+## Exercise 3
+
+### Price of park
+
+this program can give you the entrance price for a game park depending on the age of the user
+
+```c++
+    //question to know the age and capture it in a variable
+
+    cout << "How old are you ";
+    cin >> edad;
+
+//process to calculate the price of admission to the park
+
+    if (edad < 4)
+        precio = 0;  
+    else if (edad >= 4 && edad <= 18)
+        precio = 5;
+    else if (edad > 18)
+        precio = 10;
+
+//exit message about price and welcoming users
+
+    cout << "You have to pay: $" << precio << endl;
+    cout << "Welcome to Los Pollos Hermanos Games" << endl;
+
+```
+
+To make this calculation, the program takes the age from 0 to 3 for a free entrance to the park, from 4 to 18 an entrance with a cost of 5 dollars and an age older than 18 with a cost of 10 dollars.
+
+### Test
+
