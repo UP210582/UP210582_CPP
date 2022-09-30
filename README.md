@@ -17,12 +17,12 @@ REPOSITORY
 
 ## Welcome to my REPOSITORY 
 
-<div align= "justify">
+<div align= "center">
 
 <h2 id="table-of-contents"> Table of Contents</h2>
 
 <details open="open">
-  <ol>
+  <o>
     <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U1"> ➤ U1</a></li>
     <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U2"> ➤ U2</a></li>
     <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U3"> ➤ U3</a></li>
@@ -31,3 +31,5 @@ REPOSITORY
   <div align ="CENTER">
 <img alt="c++" height="200" src="https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/EnchantmentTable.webp"/>
 </div>   
+
+1233423423
