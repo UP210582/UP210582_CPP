@@ -37,3 +37,11 @@ REPOSITORY
 <img alt="c++" height="200" src="https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/EnchantmentTable.webp"/>
 </div>   
 
+## Git Commands
+git clone - download a folder
+git pull - update current git folder on the desktop
+git status - check changes that have been made
+### STEPS TO UPLOAD A FILE:  
+>git add  
+git commit -m " "  
+git push  
