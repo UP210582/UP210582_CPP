@@ -1,5 +1,7 @@
 <div align= "center">
 
+<img alt="c++" height="200" src="https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/github.gif"/>
+
 <h1 style="font-weight:normal">
   <a href="https://sourcerer.io">
     <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/ISO_C%2B%2B_Logo.svg.png 
