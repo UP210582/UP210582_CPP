@@ -24,10 +24,10 @@ REPOSITORY
 <h2 id="table-of-contents"> Table of Contents</h2>
 
   <o>
-    <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U1 Programming Introduccion"> ➤ U1</a></li>
-    <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U2 Control Structures and Cycles">  U2</a></li>
-    <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U3 Functions">  U3</a></li>
-    <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U4 Files and Arrays">  U4</a></li>
+    <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U1 Programming Introduccion">  U1 Programming Introduccion</a></li>
+    <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U2 Control Structures and Cycles">  U2 Control Structures and Cycles</a></li>
+    <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U3 Functions">  U3 Functions</a></li>
+    <li><a href="https://github.com/UP210582/UP210582_CPP/tree/main/Programacion/U4 Files and Arrays">  U4 Files and Arrays</a></li>
 
   <div align ="CENTER">
 <img alt="c++" height="200" src="https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/EnchantmentTable.webp"/>
