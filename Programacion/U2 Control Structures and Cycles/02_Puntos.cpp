@@ -15,7 +15,6 @@ Escribir un programa que lea la puntuacion del usuario e indique su nivel de ren
 */
 
 #include <iostream>
-#include <ctype.h>
 
 using namespace std;
 
