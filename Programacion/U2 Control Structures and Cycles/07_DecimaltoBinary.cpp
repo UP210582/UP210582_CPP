@@ -14,18 +14,11 @@ int main (){
     cin >> num, decimal;
     while (num != 0)
     {
-        if (num % 2 == 0)
-        {
-            resultado = "0" + resultado;
-        }
-        else
-        {
-            resultado = "1" + resultado;
-        }
+        resultado=(num%2==0)?"0"+resultado:"1"+resultado;
         num /= 2;
     }
     
-    cout << "binary : " << resultado << endl;
+    cout << "resultado : " << resultado << endl;
 
     return 0;
 }
