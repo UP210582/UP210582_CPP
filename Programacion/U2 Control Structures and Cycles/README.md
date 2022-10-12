@@ -277,3 +277,75 @@ Regular Pizza
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Pizza2.png)
 
+
+## Exercise 5
+
+## Exercise 6
+
+```c++
+    //welcoming to the store
+    cout << "Welcome to UxxA \n";
+
+    do
+    {
+        //Asking for the quantity of products
+        cout << "Give me the number of products \n";
+        cin  >> producto;
+
+        if (producto !=0 and producto >0){
+
+            //Asking the price
+            cout << "Tell me the price of the product \n";
+            cin >> precio;
+
+            //Making the calculation of the purchase by product
+            total +=(precio*producto);
+        }
+
+    } while (producto != 0);
+
+    //Printing the price of each of the products as well as the total of all products
+    cout << "The total of your purchase is: \n" << total << endl;
+
+```
+
+## Exercise 7
+
+```c++
+     //Asking user for number in binary
+   cout << "Introduce numero: ";
+   cin >> binario;
+   exp=0;
+   decimal=0;
+
+    //at the moment of giving 0 in the division it goes directly to print the result
+   while(((int)(binario/10))!=0)
+   {
+           digito = (int)binario % 10;
+           decimal = decimal + digito * pow(2.0,exp);
+           exp++;
+           binario=(int)(binario/10);
+   }
+
+    //This part prints the result and shows it to you in decimal
+   decimal=decimal + binario * pow(2.0,exp);
+   cout << endl << "Decimal: " << decimal << endl;
+```
+## Excersice 7.1
+
+```c++
+    //Asking the user for the number in decimal
+    cout << "Give me the number in decimal: \n";
+    cin >> num, decimal;
+    while (num != 0)
+    {
+        //Calculation of the number to convert it to binary
+        resultado=(num%2==0)?"0"+resultado:"1"+resultado;
+        num /= 2;
+    }
+    
+    //printing the result in binary
+    cout << "Result : " << resultado << endl;
+```
+## Excersice 8
+
