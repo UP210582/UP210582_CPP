@@ -1,8 +1,6 @@
 *UP210582 Unit 2*
 
-**excersice 1**
-
-***Using if***
+## Excersice 1 (Rent)
 
 in this code you can calculate your tax depending of you annual rent of your home or another product depending of the pay you recive a tax respective of you annual rent and you give the sale 
 
@@ -53,9 +51,7 @@ Be the income with an entry of **$59000**
 Be the income with an entry of **$70000**
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Prueba5.png)
 
-**=======================================================================================**
-
-Exersice 2
+## Exersice 2 (Points)
 
 Obtain if a user's score is unacceptable, acceptable and meritorious, in addition to indicating their bonus and how much it is equivalent to respectively depending on their score
 
@@ -130,9 +126,7 @@ Invalid
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Invalid.png)
 
 
-## Exercise 3
-
-### Price of park
+## Exercise 3 (Price of park)
 
 this program can give you the entrance price for a game park depending on the age of the user
 
@@ -179,9 +173,7 @@ Pay 10 bucks
 
 
 
-## Exercise 4
-
-### Create a Vegan Pizza or Regular Pizza
+## Exercise 4 (Create a Vegan Pizza or Regular Pizza)
 
 In this program you will be able to choose between several ingredients for a pizza, the ingredients change depending on whether it is vegan or normal, it also comes with cheese and tomato sauce included, you can only choose one ingredient
 
@@ -278,7 +270,7 @@ Regular Pizza
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Pizza2.png)
 
 
-## Exercise 5
+## Exercise 5 (Temperature)
     
 ```c++
      //Requesting the user's temperature
@@ -310,7 +302,7 @@ Regular Pizza
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Temp.png)
 
 
-## Exercise 6
+## Exercise 6 (Prices)
 
 ```c++
     //welcoming to the store
@@ -342,7 +334,7 @@ Regular Pizza
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Precios.png)
 
-## Exercise 7
+## Exercise 7 (Bianry to Decimal)
 
 ```c++
      //Asking user for number in binary
@@ -368,7 +360,7 @@ Regular Pizza
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/BtD.png)
 
-## Excersice 7.1
+## Excersice 7.1 (Decimal to Binary)
 
 ```c++
     //Asking the user for the number in decimal
@@ -388,7 +380,7 @@ Regular Pizza
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/DtB.png)
 
-## Excersice 8
+## Excersice 8 (Multiplication table)
     ```c++
     do
     {
