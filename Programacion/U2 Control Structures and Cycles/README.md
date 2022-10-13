@@ -279,6 +279,36 @@ Regular Pizza
 
 
 ## Exercise 5
+    
+```c++
+     //Requesting the user's temperature
+    cout << "Welcome to Farmacias UPA´s \n";
+
+    do
+    {
+        cout << "Give me a temperature" << endl;
+        cin >> temperatura;
+        tempeAcum +=temperatura;
+
+        contador ++;
+        if (temperatura <= temperatura_min)
+        {
+            temperatura_min=temperatura;
+        }
+        if (temperatura >= temperatura_max)
+        {
+            temperatura_max=temperatura;
+        }
+    } while (contador <=6);
+    //printing the average, maximum temperature and minimum temperature
+    cout << "Today's average temperature is: " << tempeAcum/6 <<endl;
+    cout << "The minimum temperature is: " << temperatura_min<< endl;
+    cout << "The maximum temperature is: " << temperatura_max << endl;
+```
+### Test
+
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Temp.png)
+
 
 ## Exercise 6
 
@@ -308,6 +338,9 @@ Regular Pizza
     cout << "The total of your purchase is: \n" << total << endl;
 
 ```
+### Test
+
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Precios.png)
 
 ## Exercise 7
 
@@ -331,6 +364,10 @@ Regular Pizza
    decimal=decimal + binario * pow(2.0,exp);
    cout << endl << "Decimal: " << decimal << endl;
 ```
+### Test
+
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/BtD.png)
+
 ## Excersice 7.1
 
 ```c++
@@ -347,5 +384,43 @@ Regular Pizza
     //printing the result in binary
     cout << "Result : " << resultado << endl;
 ```
+### Test
+
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/DtB.png)
+
 ## Excersice 8
+    ```c++
+    do
+    {
+        cout << "Give me the number to multiply" << endl;
+        cin >> numero;
+
+        cout << "Give me the times I'm going to multiply it" << endl;
+        cin >> limite;
+
+        cout << "The multiplication table of: " << numero << " multiplied up: " << limite <<endl;
+
+        for (int i = 1; i <=limite; i++)
+        {
+            for (int j = 0; j <= 80; j++)
+            {
+                cout << "-";
+            }
+            cout<< "\n";
+            cout << "|\t"<<i<<"\t|"<<"\tx\t"<<"|\t"<<numero<<"\t|"<<"\t=\t"<<"|\t"<<numero*i<<"\t|\n";
+        }   
+        for (int p = limite; p <=90; p++)
+            {
+                cout << "-";
+            }
+        
+        cout << "\n";
+        cout <<  "Do you want another multiplication table? Y/N" << endl;
+        cin >> follow;
+
+    } while (follow != 'n');
+    ```
+### Test
+
+![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Tabla.png)
 

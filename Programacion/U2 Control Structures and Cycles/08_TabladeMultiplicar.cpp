@@ -40,7 +40,7 @@ int main (){
             cout<< "\n";
             cout << "|\t"<<i<<"\t|"<<"\tx\t"<<"|\t"<<numero<<"\t|"<<"\t=\t"<<"|\t"<<numero*i<<"\t|\n";
         }   
-        for (int p = limite; p <=90; p++)
+        for (int p = limite; p <=88; p++)
             {
                 cout << "-";
             }
