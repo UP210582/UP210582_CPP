@@ -334,7 +334,7 @@ Regular Pizza
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Precios.png)
 
-## Exercise 7 (Bianry to Decimal)
+## Exercise 7 (Binary to Decimal)
 
 ```c++
      //Asking user for number in binary
