@@ -401,7 +401,7 @@ now it is a multiplication table which is generated from the request of the numb
         cin >> follow;
 
     } while (follow != 'n');
-    ```
+```
 for this, the number in question is requested to multiply this and then ask the user for the amount of times that it is going to multiply, using that everything is nested inside a do while to ask the user if he wants to generate another table, inside this puts what are 2 for in a for another one is nested for the creation of the lines and for later in the main for the multiplications are being generated as well as the vertical lines which will not help to delimit the table, they were used "\t" so that the table is justified and seen correctly, for the last horizontal line a for is used so that when it reaches the limit the horizontal line is printed and the table does not look ugly
 
 ### Test
