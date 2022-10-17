@@ -372,35 +372,44 @@ For this, the user is asked for the decimal number to then divide it by 2 and in
 now it is a multiplication table which is generated from the request of the number to multiply and the times that we are going to multiply it
 
 ```c++
+    //A do to ask if you want another table
     do
     {
+        //Asking the number to multiply
         cout << "Give me the number to multiply" << endl;
         cin >> numero;
-
+        
+        //Asking the times to multiply
         cout << "Give me the times I'm going to multiply it" << endl;
         cin >> limite;
 
+        //printing the title of the table where the amount of times and the number are specified
         cout << "The multiplication table of: " << numero << " multiplied up: " << limite <<endl;
 
+        //A for to be printing each row
         for (int i = 1; i <=limite; i++)
         {
+            //A nested for to print the rows
             for (int j = 0; j <= 80; j++)
             {
                 cout << "-";
             }
+            //Information that will go inside each row and column
             cout<< "\n";
             cout << "|\t"<<i<<"\t|"<<"\tx\t"<<"|\t"<<numero<<"\t|"<<"\t=\t"<<"|\t"<<numero*i<<"\t|\n";
         }   
-        for (int p = limite; p <=90; p++)
+        //A for to be able to close the table
+        for (int p = limite; p <=88; p++)
             {
                 cout << "-";
             }
-        
+        //Ask to generate another table
         cout << "\n";
         cout <<  "Do you want another multiplication table? Y/N" << endl;
         cin >> follow;
 
     } while (follow != 'n');
+
 ```
 for this, the number in question is requested to multiply this and then ask the user for the amount of times that it is going to multiply, using that everything is nested inside a do while to ask the user if he wants to generate another table, inside this puts what are 2 for in a for another one is nested for the creation of the lines and for later in the main for the multiplications are being generated as well as the vertical lines which will not help to delimit the table, they were used "\t" so that the table is justified and seen correctly, for the last horizontal line a for is used so that when it reaches the limit the horizontal line is printed and the table does not look ugly
 
