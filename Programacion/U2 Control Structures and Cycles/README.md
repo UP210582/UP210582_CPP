@@ -1,3 +1,18 @@
+<h1>UP210582 Unit 2 </h1>
+h1 {
+    font-family: system-ui;
+    color: transparent;
+    font-size: 148px
+    font-weight 600;
+    letter-spacing: -0.015em;
+    background-image: linear-gradient (
+        180deg,
+        #ffe993,
+        #eb831c
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+}
 *UP210582 Unit 2*
 
 ## Excersice 1 (Rent)
