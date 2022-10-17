@@ -272,6 +272,8 @@ Regular Pizza
 
 ## Exercise 5 (Temperature)
     
+In this program 6 temperatures are requested, these will be used to calculate the average temperature, the highest temperature and the lowest temperature
+
 ```c++
      //Requesting the user's temperature
     cout << "Welcome to Farmacias UPA´s \n";
@@ -297,12 +299,17 @@ Regular Pizza
     cout << "The minimum temperature is: " << temperatura_min<< endl;
     cout << "The maximum temperature is: " << temperatura_max << endl;
 ```
+To begin with, the user is welcomed, followed by this, the temperatures will be asked, for this, at the moment of giving the temperatures, they are being saved in a variable to be able to determine if they are higher or lower, at all times they are being compared and if it is greater than another, it is replaced and the largest is put, for the smallest it is the same way it is being saved in a variable and if the new temperature is lower than the previous one, it changes and is replaced by the new one
+
 ### Test
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Temp.png)
 
 
 ## Exercise 6 (Prices)
+
+in this program is from a store where they are asked for the number of products that it carries of the same product and then ask for its price and multiply it by the quantity of product that it carries, until giving the value of 0 in the amount of products
+
 
 ```c++
     //welcoming to the store
@@ -328,39 +335,17 @@ Regular Pizza
 
     //Printing the price of each of the products as well as the total of all products
     cout << "The total of your purchase is: \n" << total << endl;
-
 ```
+For this, a do while was used, which does not help when the quantity of products is 0, each time the user enters a quantity of product, it is stored in a variable and is used later to multiply this by the price until the number of products is 0
+
 ### Test
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Precios.png)
 
-## Exercise 7 (Binary to Decimal)
 
-```c++
-     //Asking user for number in binary
-   cout << "Introduce numero: ";
-   cin >> binario;
-   exp=0;
-   decimal=0;
+## Excersice 7 (Decimal to Binary)
 
-    //at the moment of giving 0 in the division it goes directly to print the result
-   while(((int)(binario/10))!=0)
-   {
-           digito = (int)binario % 10;
-           decimal = decimal + digito * pow(2.0,exp);
-           exp++;
-           binario=(int)(binario/10);
-   }
-
-    //This part prints the result and shows it to you in decimal
-   decimal=decimal + binario * pow(2.0,exp);
-   cout << endl << "Decimal: " << decimal << endl;
-```
-### Test
-
-![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/BtD.png)
-
-## Excersice 7.1 (Decimal to Binary)
+now with this program you can convert from decimal to binary, you just have to enter the number to convert and it will give you in binary
 
 ```c++
     //Asking the user for the number in decimal
@@ -376,12 +361,17 @@ Regular Pizza
     //printing the result in binary
     cout << "Result : " << resultado << endl;
 ```
+For this, the user is asked for the decimal number to then divide it by 2 and in the division the remainder is taken and then added to the end of the binary, the number of times that the 2 fits in the number is taken again to then divide it again by 2 and then take its remainder again to add it to the binary
+
 ### Test
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/DtB.png)
 
 ## Excersice 8 (Multiplication table)
-    ```c++
+
+now it is a multiplication table which is generated from the request of the number to multiply and the times that we are going to multiply it
+
+```c++
     do
     {
         cout << "Give me the number to multiply" << endl;
@@ -412,6 +402,8 @@ Regular Pizza
 
     } while (follow != 'n');
     ```
+for this, the number in question is requested to multiply this and then ask the user for the amount of times that it is going to multiply, using that everything is nested inside a do while to ask the user if he wants to generate another table, inside this puts what are 2 for in a for another one is nested for the creation of the lines and for later in the main for the multiplications are being generated as well as the vertical lines which will not help to delimit the table, they were used "\t" so that the table is justified and seen correctly, for the last horizontal line a for is used so that when it reaches the limit the horizontal line is printed and the table does not look ugly
+
 ### Test
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Tabla.png)
