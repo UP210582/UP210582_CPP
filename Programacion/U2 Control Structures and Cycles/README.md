@@ -14,6 +14,12 @@ font-family= system-ui
 
     UP210582 Unit 2
 </h1>
+
+
+<p class="typography-hero-headline hero-headline">Se pasa de Pro.</p>
+
+
+
 h1 {
     font-family: system-ui;
     color: transparent;
