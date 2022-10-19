@@ -51,9 +51,9 @@ REPOSITORY
 
 
 ## Git Commands
-### git clone - download a folder
-### git pull - update current git folder on the desktop
-### git status - check changes that have been made
+git clone - download a folder
+git pull - update current git folder on the desktop
+git status - check changes that have been made
 
 ### STEPS TO UPLOAD A FILE:  
 >git add  
