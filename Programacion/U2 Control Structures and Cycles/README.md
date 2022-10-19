@@ -1,6 +1,15 @@
 
+<html lang="en" class=""><head>
+
+  <meta charset="UTF-8">
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  
 <style type="text/css" class="INLINE_PEN_STYLESHEET_ID">h1 {  
   font-size: 30px;  
+  background: -webkit-linear-gradient(left top, red, yellow);
   background: linear-gradient(
     180deg,
     #ffe993,
