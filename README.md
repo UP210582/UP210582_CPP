@@ -9,6 +9,10 @@
   <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Enchanted_Bow.webp 
     alt="Sourcerer" width=35>
 
+<p align="center">
+<img src="https://visitor-badge.laobi.icu/badge?page_id=UP210582" id="counter">
+</p>
+
 ###   
 ```ini
 [Universidad Politecnica de Aguascalientes]
@@ -37,6 +41,15 @@ REPOSITORY
 <img alt="c++" height="200" src="https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/EnchantmentTable.webp"/>
 </div>   
 
+<div align= "center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=UP210582&show_icons=true&theme=radical&title_color=8E2DE2&text_color=fff&icon_color=8E2DE2">
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=UP210582&theme=radical&title_color=8E2DE2&text_color=fff)
+
+</div>   
+
+
 ## Git Commands
 git clone - download a folder
 git pull - update current git folder on the desktop
@@ -45,3 +58,5 @@ git status - check changes that have been made
 >git add  
 git commit -m " "  
 git push  
+
+⭐️ From [saviomartin](https://github.com/saviomartin)

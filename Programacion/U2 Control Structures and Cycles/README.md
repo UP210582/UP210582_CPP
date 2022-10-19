@@ -1,41 +1,6 @@
 
+# UP210582 Unit 2
 
-<html lang="en" class=""><head>
-
-  <meta charset="UTF-8">
-  <title>CodePen Demo</title>
-
-  <meta name="robots" content="noindex">
-
-  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
-  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
-  <link rel="canonical" href="https://codepen.io/milla2323/pen/MyXJYe">
-
-  
-  
-
-  
-
-  
-<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-7549a40147ccd0ba0a6b5373d87e770e49bb4689f1c2dc30cccc7463f207f997.js"></script>
-<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-5e03f34e38152f20eb79c96b0b89c2d99c5085e9ae9386dc71e2f0b3c30bf513.js"></script>
-<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
-<style type="text/css" class="INLINE_PEN_STYLESHEET_ID">h1 {  
-  font-size: 72px;  
-  background: -webkit-linear-gradient(left top, red, yellow);
-  background: linear-gradient(to bottom right, red, yellow);
-  -webkit-background-clip: text;  
-  -webkit-text-fill-color: transparent;  
-}  </style></head>
-
-<body>
-  <h1>Ejemplo Título</h1>
-  
-<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
-  
-
-
-</body></html>
 ## Excersice 1 (Rent)
 
 in this code you can calculate your tax depending of you annual rent of your home or another product depending of the pay you recive a tax respective of you annual rent and you give the sale 
