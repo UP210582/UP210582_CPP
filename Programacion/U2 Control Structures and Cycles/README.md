@@ -1,61 +1,19 @@
-<h1
-font-family= system-ui
-    color= transparent
-    font-size= 148px
-    font-weight= 600
-    letter-spacing= -0.015em
-    background-image= linear-gradient (
-        180deg,
-        #ffe993,
-        #eb831c
-    )
-    background-clip= text
-    -webkit-background-clip= text
 
-    UP210582 Unit 2
-</h1>
+<style type="text/css" class="INLINE_PEN_STYLESHEET_ID">h1 {  
+  font-size: 30px;  
+  background: linear-gradient(
+    180deg,
+    #ffe993,
+    #eb831c
+  );
+  -webkit-background-clip: text;  
+  -webkit-text-fill-color: transparent;  
+}  </style></head>
 
-
-<div class="section-content row">
-	<div class="copy-wrapper large-centered">
-		<h2>
-			<span class="violator-frameless violator-frameless typography-hero-violator">Nuevo</span> <span class="visuallyhidden">iPhone 14 Pro</span>
-		</h2>
-	    <div class="hero-eyebrow typography-hero-eyebrow">
-		<figure class="hero-eyebrow-image"></figure>
-	    </div>
-	    <p class="typography-hero-headline hero-headline">Se pasa de Pro.</p>
-	    <p class="copy-spacing typography-hero-copy hero-copy small-centered hero-copy-pricing has-dynamic-content"><span class="sosumi-link-follows" data-pricing-product="IPHONE14PRO_MAIN" data-product-template="${price.display.from}" data-pricing-loaded="">Desde $25,999</span></p>
-							
-		<ul class="links-stacked hero-cta stacked-s">
-								
-		<li class="typography-hero-cta control cta-link cta-view-pricing"><a href="/mx/shop/goto/buy_iphone/iphone_14_pro" data-analytics-title="buy - iphone 14 pro" aria-label="Comprar iPhone 14 Pro" class="button"><span class="icon-copy">Comprar</span></a></li>
-								
-		<li class="typography-hero-cta control cta-link cta-learn-more"><a href="/mx/iphone-14-pro/" data-analytics-title="learn more about iphone 14 pro" aria-label="Más información sobre el iPhone 14 Pro" class="icon-wrapper"><span class="icon-copy">Más información</span><span class="icon icon-after more"></span></a></li>
-							</ul>
-						</div>
-						<div class="hero-bgimage-wrapper">
-	<figure class="hero-bgimage"></figure>
-	</div>
-</div>
-
-
-
-h1 {
-    font-family: system-ui;
-    color: transparent;
-    font-size: 148px
-    font-weight 600;
-    letter-spacing: -0.015em;
-    background-image: linear-gradient (
-        180deg,
-        #ffe993,
-        #eb831c
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-}
-
+<body>
+  <h1>UP210582 Unit 2 </h1>
+  
+</body></html>
 
 ## Excersice 1 (Rent)
 
