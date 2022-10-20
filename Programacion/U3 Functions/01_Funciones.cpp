@@ -1,6 +1,6 @@
 /* Unidad 3. Funciones
-   Autor: Luis Ernesto Anaya Tiscareño
-   Fecha: 01/09/2022
+   Autor: Leonardo Ausencio Martinez Torres
+   Fecha: 20/09/2022
    Descripción: Muestra la creación y manejo de funciones
 */
 
