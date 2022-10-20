@@ -131,6 +131,7 @@ Invalid
 
 ## Exercise 3 (Price of park)
 
+<details close="open">
 this program can give you the entrance price for a game park depending on the age of the user
 
 ```c++
@@ -173,11 +174,12 @@ Pay 5 bucks
 
 Pay 10 bucks
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Edad4.png)
-
+</details>
 
 
 ## Exercise 4 (Create a Vegan Pizza or Regular Pizza)
 
+<details close="open">
 In this program you will be able to choose between several ingredients for a pizza, the ingredients change depending on whether it is vegan or normal, it also comes with cheese and tomato sauce included, you can only choose one ingredient
 
 ```c++
@@ -271,10 +273,11 @@ Vegan Pizza
 Regular Pizza
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Pizza2.png)
-
+</details>
 
 ## Exercise 5 (Temperature)
-    
+
+<details close="open">
 In this program 6 temperatures are requested, these will be used to calculate the average temperature, the highest temperature and the lowest temperature
 
 ```c++
@@ -307,10 +310,11 @@ To begin with, the user is welcomed, followed by this, the temperatures will be 
 ### Test
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Temp.png)
-
+</details>
 
 ## Exercise 6 (Prices)
 
+<details close="open">
 in this program is from a store where they are asked for the number of products that it carries of the same product and then ask for its price and multiply it by the quantity of product that it carries, until giving the value of 0 in the amount of products
 
 
@@ -344,10 +348,11 @@ For this, a do while was used, which does not help when the quantity of products
 ### Test
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Precios.png)
-
+</details>
 
 ## Excersice 7 (Decimal to Binary)
 
+<details close="open">
 now with this program you can convert from decimal to binary, you just have to enter the number to convert and it will give you in binary
 
 ```c++
@@ -369,9 +374,11 @@ For this, the user is asked for the decimal number to then divide it by 2 and in
 ### Test
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/DtB.png)
+</details>
 
 ## Excersice 8 (Multiplication table)
 
+<details close="open">
 now it is a multiplication table which is generated from the request of the number to multiply and the times that we are going to multiply it
 
 ```c++
@@ -419,8 +426,11 @@ for this, the number in question is requested to multiply this and then ask the 
 ### Test
 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Tabla.png)
+</details>
 
 # Exercise 9: Bisection method
+
+<details close="open">
 ## Input
 ```c++
     // Ask the user for the range
@@ -498,4 +508,4 @@ for this, the number in question is requested to multiply this and then ask the 
 
 ### When the root is not within the established range.
 ![Refres the page to see the image](https://github.com/UP210052/UP210052_CPP/blob/main/imagenes/Img_26.png)
-
+</details>
