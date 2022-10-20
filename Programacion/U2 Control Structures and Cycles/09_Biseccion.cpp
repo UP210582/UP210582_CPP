@@ -1,9 +1,11 @@
 /*
 Date: 13/10/2022
-Author: Leonardo Ausencio Martinez Torres
+Author: Leonardo Ausencio Martinez Torres.
 Email: up210582@alumnos.upa.edu.mx
-Description: Math method for getting roots
-Last Modification: 13/10/2022
+Description: Metodo de bisección.
+
+Problem (Spanish)
+Hacer el metodo de la bisección de y=x^2 - x - 12 en un margen de 0.01 al -0.01
 */
 
 // Library for input and output management.
