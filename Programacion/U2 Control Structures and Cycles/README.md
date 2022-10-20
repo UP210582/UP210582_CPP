@@ -492,10 +492,8 @@ for this, the number in question is requested to multiply this and then ask the 
 5. Print the root if there is
 ## Texts.
 ### When the root is within the established range.
-<img src=https://github.com/UP210052/UP210052_CPP/blob/main/imagenes/Img_25.png 
-    alt="Refresh the page for to see the image" width=100>
+![Refres the page to see the image](https://github.com/UP210052/UP210052_CPP/blob/main/imagenes/Img_25.png)
 
 ### When the root is not within the established range.
-<img src=https://github.com/UP210052/UP210052_CPP/blob/main/imagenes/Img_26.png 
-    alt="Refresh the page for to see the image" width=100>
+![Refres the page to see the image](https://github.com/UP210052/UP210052_CPP/blob/main/imagenes/Img_26.png)
 
