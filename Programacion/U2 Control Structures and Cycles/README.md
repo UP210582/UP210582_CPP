@@ -428,7 +428,7 @@ for this, the number in question is requested to multiply this and then ask the 
 ![Refres the page to see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/Tabla.png)
 </details>
 
-## Exercise 9: Bisection method
+## Exercise 9 (Bisection method)
 
 <details close="open">
 ## Input
