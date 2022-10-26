@@ -13,7 +13,7 @@ Last Modification: 26/10/2022
 using namespace std;
 
 void obtenerCambio(int);
-void obtenerMonedas(int);
+
 void imprimirCambio(int);
 
 int quinientos = 0, docientos = 0, cien = 0, cincuenta = 0, veinte = 0, diez = 0, cinco = 0, dos = 0, uno = 0;
