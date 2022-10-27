@@ -1,0 +1,20 @@
+residuo=("primeravez")?monto:residuo; 
+
+    quinientos=monto/denominacions[0];
+    residuo=monto%denominacions[0];
+        doscientos=monto/denominacions[1];
+        residuo=monto%denominacions[1];
+            cien=monto/denominacions[2];
+            residuo=monto%denominacions[2];
+                cincuenta=monto/denominacions[3];
+                residuo=monto%denominacions[3];
+                    veinte=monto/denominacions[4];
+                    residuo=monto%denominacions[4];
+                        diez=monto/denominacions[5];
+                        residuo=monto%denominacions[5];
+                            cinco=monto/denominacions[6];
+                            residuo=monto%denominacions[6];
+                                dos=monto/denominacions[7];
+                                residuo=monto%denominacions[7];
+                                    uno=monto/denominacions[8];
+                                    residuo=monto%denominacions[8];
