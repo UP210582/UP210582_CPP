@@ -13,6 +13,8 @@ using namespace std;
 void tablero();
 int main()
 {
+   
+void Tablero(int){
     char forma[6][11];
     for (int row = 0; row < 6; row++)
     {
@@ -31,7 +33,26 @@ int main()
         }
         cout << endl;
     }
-    return 0;
 }
-void tablero(){
 }
+int x=0, y=0;
+    for (int fila = 0; fila < 5; fila++)
+    {
+            for (int columna = 0; columna < 9; columna++)
+            {
+                if (fila== 1 || fila == 3){
+                    cout << "-";
+                }else{
+                    cout << " " << areaJuego[x][y] << " |";
+                    y++;
+                }
+                if (columna==2 || columna == 5)
+                {
+                    cout<<"|";
+                }
+                
+            }
+        cout << "\n";
+        x++;
+        y = 0;
+    }
