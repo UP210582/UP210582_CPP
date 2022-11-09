@@ -62,7 +62,7 @@ bool comprobarJugadaOcupada(int Jugada){
 int row = Jugada%3, col = Jugada-1; 
         if (areaJuego[row][col]=='X' || areaJuego[row][col]=='O')
         {
-            return true;//Significa que la casilla esta ocupada
+            return true;
         }
         else
         {

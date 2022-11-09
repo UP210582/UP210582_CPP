@@ -10,7 +10,18 @@ Description: Realizar un programa para jugar al gato
 
 // Use of namespace to avoid std::
 using namespace std;
-void tablero();
+
+void Tablero(int);
+int turno = 1;
+char areaJuego[3][3]={{'1','2','3'},{'4','5','6'},{'7','8','9'}};
+int seleccionJugada();
+void remplazoCasilla(int Jugada);
+bool comprobarJugadaOcupada(int Jugada);
+void modoDeJuego(int);
+int row, col;
+int jugada;
+int colocarJugada;
+
 int main()
 {
     char forma[6][11];
@@ -23,7 +34,7 @@ int main()
                     : forma[row][col]=' ';
         }
     }
-    for (int row = 0; row < 6; row++)
+    for (int row = 0; row < 6; row++)void Tablero(int);
     {
         for (int  col = 0; col < 11; col++)
         {
@@ -33,11 +44,8 @@ int main()
     }
     return 0;
 }
-void tablero(){
 
-}
-char creaJuego[3][3]={{"1","2","3"},{"4","5","6"},{"7","8","9"}};
-int seleccionarJugada({
+int seleccionarJugada(){
     do
     {
         cout << "Dame tu jugada: ";
@@ -98,7 +106,7 @@ bool comprobarCasillaOcupada(int jugada){
     }
     
     
-    if (areaJuego[row][col]== "x"|| areaJuego[row][col]== "o")
+    if (areaJuego[row][col]== 'X'|| areaJuego[row][col]== 'O')
     {
         return true;
     }
@@ -108,34 +116,36 @@ bool comprobarCasillaOcupada(int jugada){
     }
         
 }
-int main (){
+int pisto (){
     int jugada; 
     bool casillaOcupada = true;
     do
     {
     jugada = seleccionarJugada();
-    casillaOcupada = comprobarCasillaOcupada(jugada)
+    casillaOcupada = comprobarCasillaOcupada(jugada);
     if (casillaOcupada == false)
     {
-        colocarJuagada(jugada);
+        colocarJugada(jugada);
         system ("clear");
-        tablero();
+        Tablero();
     }    
     
         cout << "otra vez";
     } while (casillaOcupada == true);
     
+    return 0;
 }
+
 int turnoJugador = 1;
     void colocarJuagada(int jugada){
         char valorJugada;
         if (turnoJugador % 2 == 0)
         {
-            valorJugada = "x";
+            valorJugada == 'X';
         }
         else
         {
-            valorJugada = "O";
+            valorJugada == 'O';
         }
         
         if (jugada == 1)
