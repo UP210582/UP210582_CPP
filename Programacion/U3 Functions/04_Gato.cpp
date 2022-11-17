@@ -17,11 +17,22 @@ using namespace std;
 void doBoard();
 int selectedPlay();
 bool checkPlay(int, string);
+//function to check the move these can be from 1 to 9 
+//if the box is occupied it returns true and asks you to enter a 
+//valid box but if it is free it returns false and you can continue the game.
 void putMove(int, string, string);
+//Function to place the move on the corresponding board the moves range from 1 to 9. 
 bool win(string);
+//Function to determine if the move is a winning move on the corresponding board.
 int obtainingPlayed();
+//function to obtain the pc move it returns a value from 
+//1 to 9 indicating in which square the pc move is located.
 void cloneMatrix();
+//Function to clone the matrix to use it in single mode.
 int getBestPlay(string);
+//
+
+//global variables
 char structureGato[6][11];
 char gameArea[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
 char gameAreaPc[3][3];
@@ -32,50 +43,66 @@ const string HUMAN = "HUMAN";
 const string BOARD = "Real";
 const string BOARDIMAG = "Imaginario";
 
+//Principal Function
 int main()
 {
+    //in principle it is indicated that the game is 
+    //not finished and that there is no gameover for 
+    //that we indicate that gameover is false 
+    //and that the squares are in truth so that 
+    //the game starts to take them. 
     bool gameover = false;
-    int jugada;
-    bool casillaOcupada = true;
-    int modo;
+    int play;
+    bool occupiedBox = true;
+    int mode;
+    //Game start message and ask which game mode the player wants, multiplayer or singleplayer.
     cout <<"\x1b[0;31m" << "Welcome to the game of TicTacToe" <<"\x1b[0m"<< endl;
     cout <<"\x1b[0;36m"<<"Choose your game mode"<<"\x1b[0m"<< endl;
     cout <<"\x1B[38;2;17;245;120m"<<"1 Singleplayer"<<"\x1B[0m"<< endl;
     cout << "2 Multiplayer" << endl;
-    cin >> modo;
-    if (modo == 1)
+    cin >> mode;
+    //if you place 1 enter the singleplayer mode
+    if (mode == 1)
     {
         do
         {
+            //command to delete the above and for the terminal to come up clean and start the game
             system("clear");
+            //to determine which player is next, divide by 2 and if 
+            //the remainder is 0 then player 1 goes and 
+            //if it is different from 0 then player 2 goes.
             if (turnsPlayer % 2 == !0)
             {
                 do
                 {
+                    //print board in tiling to doBoard function
                     doBoard();
-                    jugada = selectedPlay();
-                    casillaOcupada = checkPlay(jugada, BOARD);
-                    if (casillaOcupada == true)
+                    //see the play reflected on the board being matched to the function selectedPlay
+                    play = selectedPlay();
+
+                    occupiedBox = checkPlay(play, BOARD);
+                    if (occupiedBox == true)
                     {
                         system("clear");
                         cout << "Trye again \n";
                     }
-                } while (casillaOcupada == true);
-                putMove(jugada, BOARD, HUMAN);
+                } while (occupiedBox == true);
+                putMove(play, BOARD, HUMAN);
                 gameover = win(BOARD);
             }
             else
             {
                 doBoard();
-                jugada = obtainingPlayed();
-                putMove(jugada, BOARD, PC);
+                play = obtainingPlayed();
+                putMove(play, BOARD, PC);
                 gameover = win(BOARD);
             }
         } while (gameover == false and turnsPlayer < 10);
         system("clear");
         doBoard();
     }
-    else if (modo == 2)
+    //if you place 2 enter multiplayer mode
+    else if (mode == 2)
     {
         do
         {
@@ -83,15 +110,15 @@ int main()
             do
             {
                 doBoard();
-                jugada = selectedPlay();
-                casillaOcupada = checkPlay(jugada, BOARD);
-                if (casillaOcupada == true)
+                play = selectedPlay();
+                occupiedBox = checkPlay(play, BOARD);
+                if (occupiedBox == true)
                 {
                     system("clear");
                     cout << "Trye again \n";
                 }
-            } while (casillaOcupada == true);
-            putMove(jugada, BOARD, HUMAN);
+            } while (occupiedBox == true);
+            putMove(play, BOARD, HUMAN);
             gameover = win(BOARD);
         } while (gameover == false and turnsPlayer < 10);
         system("clear");
@@ -106,7 +133,7 @@ int main()
         }
         else
         {
-            if (modo == 1)
+            if (mode == 1)
             {
                 cout <<"\x1b[0;31m"<<"PC won"<<"\x1b[0m"<<endl;
             }
@@ -125,6 +152,7 @@ int main()
 
 void doBoard()
 {
+    cout << "=============TicTacToe=============" << endl;
     row = 0;
     col = 0;
     for (int row1 = 0; row1 < 6; row1++)
@@ -133,7 +161,7 @@ void doBoard()
         {
             if (col1 == 3 || col1 == 7)
             {
-                structureGato[row1][col1] = '|';
+                structureGato[row1][col1] = '|'; 
             }
             else if (row1 == 1 || row1 == 3)
             {
@@ -187,13 +215,13 @@ int selectedPlay()
     return jugada1;
 }
 
-bool checkPlay(int jugada, string Tablero)
+bool checkPlay(int play, string Tablero)
 {
-    bool casillaOcupada = false;
+    bool occupiedBox = false;
     int fila = 0, columna = 0;
     for (int numjuada = 1; numjuada < 10; numjuada++)
     {
-        if (jugada == numjuada)
+        if (play == numjuada)
         {
             row = fila;
             col = columna;
@@ -213,20 +241,20 @@ bool checkPlay(int jugada, string Tablero)
     {
         if (gameArea[row][col] == 'O' || gameArea[row][col] == 'X')
         {
-            casillaOcupada = true;
+            occupiedBox = true;
         }
     }
     else if (Tablero == BOARDIMAG)
     {
         if (gameAreaPc[row][col] == 'O' || gameAreaPc[row][col] == 'X')
         {
-            casillaOcupada = true;
+            occupiedBox = true;
         }
     }
-    return casillaOcupada;
+    return occupiedBox;
 }
 
-void putMove(int jugada, string Tablero, string Jugador)
+void putMove(int play, string Tablero, string Jugador)
 {
     char valorJugada;
     if (turnsPlayer % 2 == 0)
@@ -240,7 +268,7 @@ void putMove(int jugada, string Tablero, string Jugador)
     int fila = 0, columna = 0;
     for (int numjuada = 1; numjuada < 10; numjuada++)
     {
-        if (jugada == numjuada)
+        if (play == numjuada)
         {
             if (Tablero == BOARD)
             {
@@ -335,25 +363,25 @@ bool win(string tablero)
 
 int obtainingPlayed()
 {
-    bool casillaOcupada = true;
-    int jugada;
+    bool occupiedBox = true;
+    int play;
     srand(time(NULL));
-    jugada = getBestPlay(PC);
-    if (jugada != -1)
+    play = getBestPlay(PC);
+    if (play != -1)
     {
-        return jugada;
+        return play;
     }
-    jugada = getBestPlay(HUMAN);
-    if (jugada != -1)
+    play = getBestPlay(HUMAN);
+    if (play != -1)
     {
-        return jugada;
+        return play;
     }
-    while (casillaOcupada == true)
+    while (occupiedBox == true)
     {
-        jugada= 1 + rand() % 9;
-        casillaOcupada= checkPlay (jugada,BOARD);
+        play= 1 + rand() % 9;
+        occupiedBox= checkPlay (play,BOARD);
     }
-    return jugada;
+    return play;
 }
 
 void cloneMatrix(){
@@ -368,40 +396,40 @@ void cloneMatrix(){
 
 int getBestPlay(string jugador)
 {
-    bool casillaOcupada = false;
+    bool occupiedBox = false;
     bool gameover = false;
-    int jugada = 0;
+    int play = 0;
     cloneMatrix();
     if (jugador == PC)
     {
         do
         {
-            jugada++;
-            casillaOcupada=checkPlay(jugada, BOARDIMAG);
-            if (casillaOcupada == false){
-                putMove(jugada, BOARDIMAG, PC);
+            play++;
+            occupiedBox=checkPlay(play, BOARDIMAG);
+            if (occupiedBox == false){
+                putMove(play, BOARDIMAG, PC);
                 gameover = win(BOARDIMAG);
             }
             cloneMatrix();
-        } while (jugada <= 9 && gameover == false);
+        } while (play <= 9 && gameover == false);
     } 
     else if (jugador == HUMAN)
     {
         do
         {
-            jugada++;
-            casillaOcupada=checkPlay(jugada, BOARDIMAG);
-            if (casillaOcupada== false){
-                putMove(jugada, BOARDIMAG, HUMAN);
+            play++;
+            occupiedBox=checkPlay(play, BOARDIMAG);
+            if (occupiedBox== false){
+                putMove(play, BOARDIMAG, HUMAN);
                 gameover = win(BOARDIMAG);
             }
             cloneMatrix();
-        } while (jugada <= 9 && gameover == false);
+        } while (play <= 9 && gameover == false);
     }
-    if (jugada >= 10){
-        jugada= -1;
+    if (play >= 10){
+        play= -1;
     }
-    return jugada;
+    return play;
 }
 
 //Rule of colors
