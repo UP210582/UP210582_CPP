@@ -3,7 +3,7 @@
 <h1 style="font-weight:normal">
   <a href="https://sourcerer.io">
     <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/tic-tac-toe-robot.gif 
-    alt="Sourcerer" width=35>
+    alt="Sourcerer" width=70>
   </a>
   &nbsp;TicTacToe Game&nbsp;
 </h1>
