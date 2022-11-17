@@ -1,10 +1,13 @@
 <div align= "center">
 
-# TicTacToe Game
+<h1 style="font-weight:normal">
+  <a href="https://sourcerer.io">
+    <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/tic-tac-toe-robot.gif 
+    alt="Sourcerer" width=35>
+  </a>
+  &nbsp;TicTacToe Game&nbsp;
+</h1>
 
-<div align ="CENTER">
-<img alt="c++" height="200" src="https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/tic-tac-toe-robot.gif"/>
-</div>   
 
 ## Index
 [Instruccions of  ejecution](#Instruccions-of-ejecution)  
