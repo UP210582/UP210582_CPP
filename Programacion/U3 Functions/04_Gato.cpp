@@ -14,23 +14,23 @@ Last Modification: 14/10/2022
 // Use of namespace to avoid std::
 using namespace std;
 
-void hacerTablero();
-int seleccionJugada();
-bool compruebaJugada(int, string);
-void ponerJugada(int, string, string);
-bool ganar(string);
-int obtencionJugada();
-void clonMatriz();
-int obtenerMejorJugada(string);
+void doBoard();
+int selectedPlay();
+bool checkPlay(int, string);
+void putMove(int, string, string);
+bool win(string);
+int obtainingPlayed();
+void cloneMatrix();
+int getBestPlay(string);
 char structureGato[6][11];
-char areaDeJuego[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
-char areaDeJuegoDePc[3][3];
-int turnosJugador = 1;
+char gameArea[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
+char gameAreaPc[3][3];
+int turnsPlayer = 1;
 int row, col;
 const string PC = "Robot";
-const string HUMANO = "Humano";
-const string TABLERO = "Real";
-const string TABLEROIMAG = "Imaginario";
+const string HUMAN = "HUMAN";
+const string BOARD = "Real";
+const string BOARDIMAG = "Imaginario";
 
 int main()
 {
@@ -48,32 +48,32 @@ int main()
         do
         {
             system("clear");
-            if (turnosJugador % 2 == !0)
+            if (turnsPlayer % 2 == !0)
             {
                 do
                 {
-                    hacerTablero();
-                    jugada = seleccionJugada();
-                    casillaOcupada = compruebaJugada(jugada, TABLERO);
+                    doBoard();
+                    jugada = selectedPlay();
+                    casillaOcupada = checkPlay(jugada, BOARD);
                     if (casillaOcupada == true)
                     {
                         system("clear");
                         cout << "Trye again \n";
                     }
                 } while (casillaOcupada == true);
-                ponerJugada(jugada, TABLERO, HUMANO);
-                gameover = ganar(TABLERO);
+                putMove(jugada, BOARD, HUMAN);
+                gameover = win(BOARD);
             }
             else
             {
-                hacerTablero();
-                jugada = obtencionJugada();
-                ponerJugada(jugada, TABLERO, PC);
-                gameover = ganar(TABLERO);
+                doBoard();
+                jugada = obtainingPlayed();
+                putMove(jugada, BOARD, PC);
+                gameover = win(BOARD);
             }
-        } while (gameover == false and turnosJugador < 10);
+        } while (gameover == false and turnsPlayer < 10);
         system("clear");
-        hacerTablero();
+        doBoard();
     }
     else if (modo == 2)
     {
@@ -82,25 +82,25 @@ int main()
             system("clear");
             do
             {
-                hacerTablero();
-                jugada = seleccionJugada();
-                casillaOcupada = compruebaJugada(jugada, TABLERO);
+                doBoard();
+                jugada = selectedPlay();
+                casillaOcupada = checkPlay(jugada, BOARD);
                 if (casillaOcupada == true)
                 {
                     system("clear");
                     cout << "Trye again \n";
                 }
             } while (casillaOcupada == true);
-            ponerJugada(jugada, TABLERO, HUMANO);
-            gameover = ganar(TABLERO);
-        } while (gameover == false and turnosJugador < 10);
+            putMove(jugada, BOARD, HUMAN);
+            gameover = win(BOARD);
+        } while (gameover == false and turnsPlayer < 10);
         system("clear");
-        hacerTablero();
+        doBoard();
     }
 
     if (gameover == true)
     {
-        if (turnosJugador % 2 == 0)
+        if (turnsPlayer % 2 == 0)
         {
             cout <<"\x1b[0;33m"<<"Player 1 won"<<"\x1b[0m"<< endl;
         }
@@ -123,7 +123,7 @@ int main()
     return 0;
 }
 
-void hacerTablero()
+void doBoard()
 {
     row = 0;
     col = 0;
@@ -141,7 +141,7 @@ void hacerTablero()
             }
             else if (row1 != 5 && (col1 == 1 || col1 == 5 || col1 == 9))
             {
-                structureGato[row1][col1] = areaDeJuego[row][col];
+                structureGato[row1][col1] = gameArea[row][col];
                 col++;
                 if (col == 3)
                 {
@@ -176,7 +176,7 @@ void hacerTablero()
     }
 }
 
-int seleccionJugada()
+int selectedPlay()
 {
     int jugada1;
     do
@@ -187,7 +187,7 @@ int seleccionJugada()
     return jugada1;
 }
 
-bool compruebaJugada(int jugada, string Tablero)
+bool checkPlay(int jugada, string Tablero)
 {
     bool casillaOcupada = false;
     int fila = 0, columna = 0;
@@ -209,16 +209,16 @@ bool compruebaJugada(int jugada, string Tablero)
             }
         }
     }
-    if (Tablero == TABLERO)
+    if (Tablero == BOARD)
     {
-        if (areaDeJuego[row][col] == 'O' || areaDeJuego[row][col] == 'X')
+        if (gameArea[row][col] == 'O' || gameArea[row][col] == 'X')
         {
             casillaOcupada = true;
         }
     }
-    else if (Tablero == TABLEROIMAG)
+    else if (Tablero == BOARDIMAG)
     {
-        if (areaDeJuegoDePc[row][col] == 'O' || areaDeJuegoDePc[row][col] == 'X')
+        if (gameAreaPc[row][col] == 'O' || gameAreaPc[row][col] == 'X')
         {
             casillaOcupada = true;
         }
@@ -226,10 +226,10 @@ bool compruebaJugada(int jugada, string Tablero)
     return casillaOcupada;
 }
 
-void ponerJugada(int jugada, string Tablero, string Jugador)
+void putMove(int jugada, string Tablero, string Jugador)
 {
     char valorJugada;
-    if (turnosJugador % 2 == 0)
+    if (turnsPlayer % 2 == 0)
     {
         valorJugada = 'X';
     }
@@ -242,14 +242,14 @@ void ponerJugada(int jugada, string Tablero, string Jugador)
     {
         if (jugada == numjuada)
         {
-            if (Tablero == TABLERO)
+            if (Tablero == BOARD)
             {
-                areaDeJuego[fila][columna] = valorJugada;
+                gameArea[fila][columna] = valorJugada;
                 break;
             }
-            else if (Tablero == TABLEROIMAG)
+            else if (Tablero == BOARDIMAG)
             {
-                if (Jugador == HUMANO)
+                if (Jugador == HUMAN)
                 {
                     valorJugada = 'O';
                 }
@@ -257,7 +257,7 @@ void ponerJugada(int jugada, string Tablero, string Jugador)
                 {
                     valorJugada = 'X';
                 }
-                areaDeJuegoDePc[fila][columna] = valorJugada;
+                gameAreaPc[fila][columna] = valorJugada;
                 break;
             }
         }
@@ -271,79 +271,79 @@ void ponerJugada(int jugada, string Tablero, string Jugador)
             }
         }
     }
-    if (Tablero == TABLERO){
-        turnosJugador++;
+    if (Tablero == BOARD){
+        turnsPlayer++;
     }
 }
 
-bool ganar(string tablero)
+bool win(string tablero)
 {
-    bool ganar = false;
+    bool win = false;
     for (int posicion = 0; posicion < 3; posicion++)
     {
-        if (tablero == TABLERO)
+        if (tablero == BOARD)
         {
-            if (areaDeJuego[posicion][0] == areaDeJuego[posicion][1] && areaDeJuego[posicion][posicion] == areaDeJuego[posicion][2] && areaDeJuego[posicion][1] == areaDeJuego[posicion][2])
+            if (gameArea[posicion][0] == gameArea[posicion][1] && gameArea[posicion][posicion] == gameArea[posicion][2] && gameArea[posicion][1] == gameArea[posicion][2])
             {
-                ganar = true;
+                win = true;
                 break;
             }
-            if (areaDeJuego[0][posicion] == areaDeJuego[1][posicion] && areaDeJuego[0][posicion] == areaDeJuego[2][posicion] && areaDeJuego[1][posicion] == areaDeJuego[2][posicion])
+            if (gameArea[0][posicion] == gameArea[1][posicion] && gameArea[0][posicion] == gameArea[2][posicion] && gameArea[1][posicion] == gameArea[2][posicion])
             {
-                ganar = true;
+                win = true;
                 break;
             }
         }
-        else if (tablero == TABLEROIMAG)
+        else if (tablero == BOARDIMAG)
         {
-            if (areaDeJuegoDePc[posicion][0] == areaDeJuegoDePc[posicion][1] && areaDeJuegoDePc[posicion][posicion] == areaDeJuegoDePc[posicion][2] && areaDeJuegoDePc[posicion][1] == areaDeJuegoDePc[posicion][2])
+            if (gameAreaPc[posicion][0] == gameAreaPc[posicion][1] && gameAreaPc[posicion][posicion] == gameAreaPc[posicion][2] && gameAreaPc[posicion][1] == gameAreaPc[posicion][2])
             {
-                ganar = true;
+                win = true;
                 break;
             }
-            if (areaDeJuegoDePc[0][posicion] == areaDeJuegoDePc[1][posicion] && areaDeJuegoDePc[0][posicion] == areaDeJuegoDePc[2][posicion] && areaDeJuegoDePc[1][posicion] == areaDeJuegoDePc[2][posicion])
+            if (gameAreaPc[0][posicion] == gameAreaPc[1][posicion] && gameAreaPc[0][posicion] == gameAreaPc[2][posicion] && gameAreaPc[1][posicion] == gameAreaPc[2][posicion])
             {
-                ganar = true;
+                win = true;
                 break;
             }
         }
     }
-    if (tablero == TABLERO)
+    if (tablero == BOARD)
     {
-        if (areaDeJuego[0][0] == areaDeJuego[1][1] && areaDeJuego[0][0] == areaDeJuego[2][2] && areaDeJuego[1][1] == areaDeJuego[2][2]) 
+        if (gameArea[0][0] == gameArea[1][1] && gameArea[0][0] == gameArea[2][2] && gameArea[1][1] == gameArea[2][2]) 
         {
-            ganar = true;
+            win = true;
         }
-        else if (areaDeJuego[2][0] == areaDeJuego[1][1] && areaDeJuego[2][0] == areaDeJuego[0][2] && areaDeJuego[0][2] == areaDeJuego[1][1])
+        else if (gameArea[2][0] == gameArea[1][1] && gameArea[2][0] == gameArea[0][2] && gameArea[0][2] == gameArea[1][1])
         {
-            ganar = true;
+            win = true;
         }
     } 
-    else if (tablero == TABLEROIMAG)
+    else if (tablero == BOARDIMAG)
     {
-        if (areaDeJuegoDePc[0][0] == areaDeJuegoDePc[1][1] && areaDeJuegoDePc[0][0] == areaDeJuegoDePc[2][2] && areaDeJuegoDePc[1][1] == areaDeJuegoDePc[2][2])
+        if (gameAreaPc[0][0] == gameAreaPc[1][1] && gameAreaPc[0][0] == gameAreaPc[2][2] && gameAreaPc[1][1] == gameAreaPc[2][2])
         {
-            ganar = true;
+            win = true;
         }
-        else if (areaDeJuegoDePc[2][0] == areaDeJuegoDePc[1][1] && areaDeJuegoDePc[2][0] == areaDeJuegoDePc[0][2] && areaDeJuegoDePc[0][2] == areaDeJuegoDePc[1][1])
+        else if (gameAreaPc[2][0] == gameAreaPc[1][1] && gameAreaPc[2][0] == gameAreaPc[0][2] && gameAreaPc[0][2] == gameAreaPc[1][1])
         {
-            ganar = true;
+            win = true;
         }
     }
-    return ganar;
+    return win;
 }
 
-int obtencionJugada()
+int obtainingPlayed()
 {
     bool casillaOcupada = true;
     int jugada;
     srand(time(NULL));
-    jugada = obtenerMejorJugada(PC);
+    jugada = getBestPlay(PC);
     if (jugada != -1)
     {
         return jugada;
     }
-    jugada = obtenerMejorJugada(HUMANO);
+    jugada = getBestPlay(HUMAN);
     if (jugada != -1)
     {
         return jugada;
@@ -351,51 +351,51 @@ int obtencionJugada()
     while (casillaOcupada == true)
     {
         jugada= 1 + rand() % 9;
-        casillaOcupada= compruebaJugada (jugada,TABLERO);
+        casillaOcupada= checkPlay (jugada,BOARD);
     }
     return jugada;
 }
 
-void clonMatriz(){
+void cloneMatrix(){
     for (int fila = 0; fila < 3; fila++)
     {
         for (int columna = 0; columna < 3; columna++)
         {
-            areaDeJuegoDePc[fila][columna] = areaDeJuego[fila][columna];
+            gameAreaPc[fila][columna] = gameArea[fila][columna];
         }
     }
 }
 
-int obtenerMejorJugada(string jugador)
+int getBestPlay(string jugador)
 {
     bool casillaOcupada = false;
     bool gameover = false;
     int jugada = 0;
-    clonMatriz();
+    cloneMatrix();
     if (jugador == PC)
     {
         do
         {
             jugada++;
-            casillaOcupada=compruebaJugada(jugada, TABLEROIMAG);
+            casillaOcupada=checkPlay(jugada, BOARDIMAG);
             if (casillaOcupada == false){
-                ponerJugada(jugada, TABLEROIMAG, PC);
-                gameover = ganar(TABLEROIMAG);
+                putMove(jugada, BOARDIMAG, PC);
+                gameover = win(BOARDIMAG);
             }
-            clonMatriz();
+            cloneMatrix();
         } while (jugada <= 9 && gameover == false);
     } 
-    else if (jugador == HUMANO)
+    else if (jugador == HUMAN)
     {
         do
         {
             jugada++;
-            casillaOcupada=compruebaJugada(jugada, TABLEROIMAG);
+            casillaOcupada=checkPlay(jugada, BOARDIMAG);
             if (casillaOcupada== false){
-                ponerJugada(jugada, TABLEROIMAG, HUMANO);
-                gameover = ganar(TABLEROIMAG);
+                putMove(jugada, BOARDIMAG, HUMAN);
+                gameover = win(BOARDIMAG);
             }
-            clonMatriz();
+            cloneMatrix();
         } while (jugada <= 9 && gameover == false);
     }
     if (jugada >= 10){
