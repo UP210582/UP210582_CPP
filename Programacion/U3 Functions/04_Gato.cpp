@@ -75,6 +75,9 @@ int main()
             {
                 do
                 {
+                    cout <<"\x1b[0;31m"<< "=============TicTacToe=============" <<"\x1b[0m"<<endl;
+                    cout <<"\x1b[0;33m"<<"Player is O\t" << "\t" <<"\x1b[0;34m"<<"Pc is X" <<"\x1b[0m"<<endl;
+                    cout << endl;
                     //print board in tiling to doBoard function
                     doBoard();
                     //see the play reflected on the board being matched to the function selectedPlay
@@ -109,6 +112,9 @@ int main()
             system("clear");
             do
             {
+                cout <<"\x1b[0;31m"<< "=============TicTacToe=============" <<"\x1b[0m"<<endl;
+                cout <<"\x1b[0;33m"<<"Player 1 is O\t" << "\t" <<"\x1b[0;34m"<<"Player 2 is X" <<"\x1b[0m"<<endl;
+                cout << endl;
                 doBoard();
                 play = selectedPlay();
                 occupiedBox = checkPlay(play, BOARD);
@@ -129,17 +135,17 @@ int main()
     {
         if (turnsPlayer % 2 == 0)
         {
-            cout <<"\x1b[0;33m"<<"Player 1 won"<<"\x1b[0m"<< endl;
+            cout <<"\x1b[0;33m"<<"Player 1 is the winner "<<"\x1b[0m"<< endl;
         }
         else
         {
             if (mode == 1)
             {
-                cout <<"\x1b[0;31m"<<"PC won"<<"\x1b[0m"<<endl;
+                cout <<"\x1b[0;31m"<<"PC is the winner"<<"\x1b[0m"<<endl;
             }
             else
             {
-                cout <<"\x1b[0;34m"<<"Player 2 won"<<"\x1b[0m"<< endl;
+                cout <<"\x1b[0;34m"<<"Player 2 is the winner"<<"\x1b[0m"<< endl;
             }
         }
     }
@@ -152,7 +158,6 @@ int main()
 
 void doBoard()
 {
-    cout << "=============TicTacToe=============" << endl;
     row = 0;
     col = 0;
     for (int row1 = 0; row1 < 6; row1++)
@@ -209,7 +214,7 @@ int selectedPlay()
     int jugada1;
     do
     {
-        cout <<"\x1b[0;35m"<<"Give  me your move: "<<"\x1b[0m";
+        cout <<"\x1b[0;35m"<<"Give me your move: "<<"\x1b[0m";
         cin >> jugada1;
     } while (jugada1 > 9 && jugada1 < 0);
     return jugada1;
