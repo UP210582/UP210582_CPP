@@ -3,7 +3,7 @@ Date: 28/10/2022
 Author: Leonardo Ausencio Martinez Torres
 Email: up210582@alumnos.upa.edu.mx
 Description: Tic Tac toe
-Last Modification: 14/10/2022
+Last Modification: 17/10/2022
 */
 
 //used bookstores
