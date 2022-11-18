@@ -10,6 +10,7 @@ Last Modification: 17/10/2022
 #include <iostream>
 #include <stdalign.h>
 #include <time.h>
+#include <unistd.h>
 
 // Use of namespace to avoid std::
 using namespace std;
@@ -30,7 +31,10 @@ int obtainingPlayed();
 void cloneMatrix();
 //Function to clone the matrix to use it in single mode.
 int getBestPlay(string);
-//
+//Function for give the best play in the mode single player, this function is for player pc
+void gotoxy(int x, int y){
+    cout << "\033[" << y << " " << x << " ";
+}
 
 //global variables
 char structureGato[6][11];
@@ -46,6 +50,7 @@ const string BOARDIMAG = "Imaginario";
 //Principal Function
 int main()
 {
+    system("clear");
     //in principle it is indicated that the game is 
     //not finished and that there is no gameover for 
     //that we indicate that gameover is false 
@@ -55,6 +60,7 @@ int main()
     int play;
     bool occupiedBox = true;
     int mode;
+    gotoxy(1,10);
     //Game start message and ask which game mode the player wants, multiplayer or singleplayer.
     cout <<"\x1b[0;31m" << "Welcome to the game of TicTacToe" <<"\x1b[0m"<< endl;
     cout <<"\x1b[0;36m"<<"Choose your game mode"<<"\x1b[0m"<< endl;
@@ -73,6 +79,7 @@ int main()
             //if it is different from 0 then player 2 goes.
             if (turnsPlayer % 2 == !0)
             {
+                gotoxy(10,10);
                 do
                 {
                     cout <<"\x1b[0;31m"<< "=============TicTacToe=============" <<"\x1b[0m"<<endl;
@@ -130,6 +137,12 @@ int main()
         system("clear");
         doBoard();
     }
+    else if (mode != 1 && mode != 2)
+    {
+        cout << "Please choose a valid mode of Game" << endl;
+        sleep(1);
+        main();
+    }
 
     if (gameover == true)
     {
@@ -149,7 +162,7 @@ int main()
             }
         }
     }
-    else
+    if (gameover == false)
     {
         cout <<"\x1b[0;31m"<<"Anyone's won"<<"\x1b[0m"<<endl;
     }
