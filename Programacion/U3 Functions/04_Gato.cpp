@@ -32,9 +32,7 @@ void cloneMatrix();
 //Function to clone the matrix to use it in single mode.
 int getBestPlay(string);
 //Function for give the best play in the mode single player, this function is for player pc
-void gotoxy(int x, int y){
-    cout << "\033[" << y << " " << x << " ";
-}
+
 
 //global variables
 char structureGato[6][11];
@@ -60,7 +58,7 @@ int main()
     int play;
     bool occupiedBox = true;
     int mode;
-    gotoxy(1,10);
+    
     //Game start message and ask which game mode the player wants, multiplayer or singleplayer.
     cout <<"\x1b[0;31m" << "Welcome to the game of TicTacToe" <<"\x1b[0m"<< endl;
     cout <<"\x1b[0;36m"<<"Choose your game mode"<<"\x1b[0m"<< endl;
@@ -140,8 +138,7 @@ int main()
     else if (mode != 1 && mode != 2)
     {
         cout << "Please choose a valid mode of Game" << endl;
-        sleep(1);
-        main();
+        return 0;
     }
 
     if (gameover == true)
@@ -154,7 +151,8 @@ int main()
         {
             if (mode == 1)
             {
-                cout <<"\x1b[0;31m"<<"PC is the winner"<<"\x1b[0m"<<endl;
+                cout <<"\x1b[0;33m"<<"Game Over"<<"\x1b[0m"<<endl;
+                cout <<"\x1b[0;34m"<<"PC is the winner"<<"\x1b[0m"<<endl;
             }
             else
             {
