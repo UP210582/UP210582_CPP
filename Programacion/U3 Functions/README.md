@@ -54,8 +54,10 @@ abcdefghijklmnñopqrstuvwxyz
 <div align= "center">
 
 ## Development
-
+</div>
 <details close="open">
+
+<div align= "center">
 
 ### Player vs Pc
 
@@ -75,6 +77,7 @@ alt="Sourcerer" width=300>
 <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/5.png 
 alt="Sourcerer" width=300>
 
+</div>
 </details>
 
 <div align= "center">
