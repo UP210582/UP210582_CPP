@@ -77,10 +77,9 @@ int main()
             //if it is different from 0 then player 2 goes.
             if (turnsPlayer % 2 == !0)
             {
-                gotoxy(10,10);
                 do
                 {
-                    cout <<"\x1b[0;31m"<< "=============TicTacToe=============" <<"\x1b[0m"<<endl;
+                    cout <<"\x1b[0;31m"<< "=============TicTacToe Singleplayer Mode===========" <<"\x1b[0m"<<endl;
                     cout <<"\x1b[0;33m"<<"Player is O\t" << "\t" <<"\x1b[0;34m"<<"Pc is X" <<"\x1b[0m"<<endl;
                     cout << endl;
                     //print board in tiling to doBoard function
@@ -117,7 +116,7 @@ int main()
             system("clear");
             do
             {
-                cout <<"\x1b[0;31m"<< "=============TicTacToe=============" <<"\x1b[0m"<<endl;
+                cout <<"\x1b[0;31m"<< "=============TicTacToe Multiplayer Mode============" <<"\x1b[0m"<<endl;
                 cout <<"\x1b[0;33m"<<"Player 1 is O\t" << "\t" <<"\x1b[0;34m"<<"Player 2 is X" <<"\x1b[0m"<<endl;
                 cout << endl;
                 doBoard();
@@ -231,10 +230,14 @@ int selectedPlay()
     return jugada1;
 }
 
-bool checkPlay(int play, string Tablero)
+bool checkPlay(int play, string board)
 {
     bool occupiedBox = false;
     int fila = 0, columna = 0;
+    if (play >9 || play <=0 and board == BOARD)
+    {
+        return true;
+    }
     for (int numjuada = 1; numjuada < 10; numjuada++)
     {
         if (play == numjuada)
@@ -253,14 +256,14 @@ bool checkPlay(int play, string Tablero)
             }
         }
     }
-    if (Tablero == BOARD)
+    if (board == BOARD)
     {
         if (gameArea[row][col] == 'O' || gameArea[row][col] == 'X')
         {
             occupiedBox = true;
         }
     }
-    else if (Tablero == BOARDIMAG)
+    else if (board == BOARDIMAG)
     {
         if (gameAreaPc[row][col] == 'O' || gameAreaPc[row][col] == 'X')
         {
@@ -270,7 +273,7 @@ bool checkPlay(int play, string Tablero)
     return occupiedBox;
 }
 
-void putMove(int play, string Tablero, string Jugador)
+void putMove(int play, string board, string Jugador)
 {
     char valorJugada;
     if (turnsPlayer % 2 == 0)
@@ -286,12 +289,12 @@ void putMove(int play, string Tablero, string Jugador)
     {
         if (play == numjuada)
         {
-            if (Tablero == BOARD)
+            if (board == BOARD)
             {
                 gameArea[fila][columna] = valorJugada;
                 break;
             }
-            else if (Tablero == BOARDIMAG)
+            else if (board == BOARDIMAG)
             {
                 if (Jugador == HUMAN)
                 {
@@ -315,7 +318,7 @@ void putMove(int play, string Tablero, string Jugador)
             }
         }
     }
-    if (Tablero == BOARD){
+    if (board == BOARD){
         turnsPlayer++;
     }
 }
