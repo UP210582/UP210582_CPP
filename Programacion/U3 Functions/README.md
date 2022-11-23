@@ -24,6 +24,66 @@
 ## Instruccions of  ejecution
 </div>
 <details close="open">
+
+</div align="center">
+
+In order to enjoy the single player and multiplayer game modes, you first need to follow the steps below depending on the operating system.
+<h2> Windox </h2>
+
+1. Download or clone my repo with the following command in the terminal:
+   
+~~~
+"git clone https://github.com/UP210052/UP210052_CPP.git"
+~~~
+
+2. Download and install the compiler in this link https://sourceforge.net/projects/mingw/files/OldFiles/ 
+3. Open the terminal at the direction of the file with the command:
+
+~~~
+cd C:\Documents\...
+~~~
+
+4. To compile use command:
+
+~~~
+gcc  04_Gato.cpp -o 04_Gato.exe
+~~~
+
+5. To run type this code:
+
+~~~
+04_Gato.exe
+~~~
+
+<h2> Linux (Ubuntu)</h2>
+
+1. Download or clone my repo with the following command in the terminal:
+   
+~~~
+"git clone https://github.com/UP210052/UP210052_CPP.git"
+~~~
+
+2. Install GNU c/c++ compiler, open the terminal and type:
+
+~~~
+$ sudo apt-get update
+$ sudo apt-get install build-essential manpages-dev
+~~~
+
+3. To compile this program, type:
+
+~~~
+gcc 04_Gato.c -o 04_Gato
+~~~
+
+4. To run this program, type:
+   
+~~~
+./04_Gato
+~~~
+
+</div>
+
 this game has 2 game modes, solitaire mode which is against the computer and multiplayer mode which allows you to play against your friends, the game has a total of 9 moves, to select the game mode just type 1 for single player and 2 for multiplayer, on the other hand the player 1 is always the O and the player X is the player 2 or Pc depending on the selected mode.
 </details>
 
