@@ -28,7 +28,7 @@
 </div align="center">
 
 In order to enjoy the single player and multiplayer game modes, you first need to follow the steps below depending on the operating system.
-<h2> Windox </h2>
+<h2> Windows </h2>
 
 1. Download or clone my repo with the following command in the terminal:
    
@@ -108,7 +108,8 @@ To play you have to keep in mind that to select the game mode you only have to p
 ## Flow Diagram
 </div>
 <details close="open">
-abcdefghijklmnñopqrstuvwxyz
+<img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/FlujoGato.drawio.png
+alt="Sourcerer" width=300>
 </details>
 
 <div align= "center">
