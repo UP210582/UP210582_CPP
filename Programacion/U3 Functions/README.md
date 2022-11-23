@@ -54,26 +54,26 @@ abcdefghijklmnñopqrstuvwxyz
 <div align= "center">
 
 ## Development
-</div>
+
 <details close="open">
 
 ### Player vs Pc
 
 #### To start we select the game mode, in this case it is singleplayer since we are going to play against the pc.
 <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/1.png 
-alt="Sourcerer" width=500>
+alt="Sourcerer" width=300>
 #### After selecting 1 we will enter in singleplayer mode and this we will be able to know thanks to the header that will tell us in which mode we are in case we forget in which mode we are playing.
 <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/2.png
-alt="Sourcerer" width=500>
+alt="Sourcerer" width=300>
 #### Now we select the square to play, the squares to select are from 1 to 9 and just type a number and the move will be reflected on the board.
 <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/3.png 
-alt="Sourcerer" width=500>
+alt="Sourcerer" width=300>
 #### Now the next turn is the computer's turn, it will randomly select a square.
 <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/4.png 
-alt="Sourcerer" width=500>
+alt="Sourcerer" width=300>
 #### After this we can continue playing to beat the computer.
 <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/5.png 
-alt="Sourcerer" width=500>
+alt="Sourcerer" width=300>
 
 </details>
 
