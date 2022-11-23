@@ -54,11 +54,11 @@ abcdefghijklmnñopqrstuvwxyz
 <div align= "center">
 
 ## Development
-<details close="open">
 </div>
+<details close="open">
 
 ### Player vs Pc
-#### Winning Game
+
 #### To start we select the game mode, in this case it is singleplayer since we are going to play against the pc.
 <img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/1.png 
 alt="Sourcerer" width=70>
@@ -80,13 +80,15 @@ alt="Sourcerer" width=70>
 <div align= "center">
 
 ## Conclusions
-<details close="open">
 </div>
+<details close="open">
+
 This project was a real challenge because for the creation of the singleplayer game mode we had to develop an intelligence which could predict the moves and use this prediction in their favor, for that we use a copy of the cat with the moves already set, this intelligence checks each of the boxes and determines which of them will provide the victory, and with this the difficult was solved. 
 
 The code has nothing of order is not consecutive since we used the creation of functions which we can call to use them later and thus not having to be repeating many times the same code which will do the same thing over and over again, for that we had to create functions which were concise and precise to be able to call them over and over again and thus to be more fluid and efficient work.
 
 Throughout all the work I was presented with several challenges, one of them was trying to understand and analyze the operation of the functions as I had missed 2 classes which were in which the use of these was explained, but I had to learn how to use the functions in a very short period of time. 
+
 </details>
 
 
