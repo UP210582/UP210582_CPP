@@ -8,7 +8,7 @@ Email:  up210374@alumnos.upa.edu.mx
         up210300@alumnos.upa.edu.mx
         up210582@alumnos.upa.edu.mx
 Description: Game of Conect 4
-Last Modification: 23/11/2022
+Last Modification: 24/11/2022
 */
 
 
