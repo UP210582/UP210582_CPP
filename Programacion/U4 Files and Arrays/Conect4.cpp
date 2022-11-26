@@ -26,8 +26,9 @@ int obtainingPlayed();
 void cloneBoard();
 int getBestPlay(string);
 
+char board[35][35];
 char structureConect[7][7]
-int turnsPlayer = 1;
+int turnPlayer = 1;
 
 
 
@@ -38,6 +39,8 @@ int main (){
     bool occupiedBox = true;
     int mode;
 
+    void doBoard();
+    /*
     cout << "Welcome to Conect 4" << endl;
     cout << "Choose your game mode" << endl;
     cout << "1 SinglePlayer" << endl;
@@ -56,5 +59,35 @@ int main (){
 
             }
         } while (/* condition */);
+    // } */
+
+}
+
+void doBoard(){
+
+    int row;
+    int col;
+
+    for (int  row = 0; row < 35; row++)
+    {
+        for (int col = 0; col < 35; col++)
+        {
+            if (col%4==0 )
+            {
+                cout << "|";
+            }
+            else if (row%4==0 )
+            {
+                cout << "_";
+            }
+            else
+            {
+                cout << "x";
+            }   
+            
+        }
+        
     }
+    
+
 }
