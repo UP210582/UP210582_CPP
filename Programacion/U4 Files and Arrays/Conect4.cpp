@@ -88,6 +88,20 @@ void doBoard(){
         }
         
     }
+}
+
+int selectMove(){
+    int move;
+    cout << "Choose a column: ";
+    cin >> move;
+    while (move < 1 || move > 7 ){
+        cout << "This is incorrect, choose another column: ";
+        cin >> move;
+    }
+    return move;
+}
+bool checkBusyBox(int move){
+    bool busyBox=false;
     
 
 }
