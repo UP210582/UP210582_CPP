@@ -29,6 +29,7 @@ int getBestPlay(string);
 char board[35][35];
 char structureConect[7][7]
 int turnPlayer = 1;
+int move;
 
 
 
@@ -94,14 +95,17 @@ int selectMove(){
     int move;
     cout << "Choose a column: ";
     cin >> move;
-    while (move < 1 || move > 7 ){
+    while (move < 1 || move > 42){
         cout << "This is incorrect, choose another column: ";
         cin >> move;
     }
     return move;
 }
 bool checkBusyBox(int move){
+    int row, col;
     bool busyBox=false;
-    
+    if (move==1||move==2||move==3||move==4||move==5||move==6||move==7){
+        row=0;
+    }else if (move==)
 
 }
