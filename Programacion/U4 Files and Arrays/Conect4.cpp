@@ -28,10 +28,11 @@ int getBestPlay(string);
 
 char board[35][35];
 char structureConect[7][7]
-int turnPlayer = 1;
-int move;
+int move, turn=1;
 const string BOARD = "Real";
 const string IMGBOARD = "Imaginary";
+const string PC = "Machine";
+const string PERSON = "Human";
 
 
 
@@ -147,4 +148,32 @@ bool checkBusyBox(int move, string board){
         }
     }
     return busyBox;    
+}
+
+void setMove(int move, string board, string player){
+
+    char moveValue;
+    int row=0, col=0;
+    if (turn % 2 == 0)
+        moveValue = '0';
+    else
+        moveValue = 'O';
+
+    if (board == BOARD)
+    {
+        position[row][col] = moveValue;
+    }
+    else if (board == IMGBOARD)
+    {
+        if (player == PERSON)
+        {
+            moveValue = 'O';
+        }
+        else if (player == PC)
+        {
+            moveValue = '0';
+        }
+        positionIMG[row][col] = moveValue;
+    }
+
 }
