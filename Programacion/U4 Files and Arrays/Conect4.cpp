@@ -18,10 +18,10 @@ Last Modification: 24/11/2022
 using namespace std;
 
 void doBoard();
-int selectedPlay();
-bool checkPlay(int, string);
-void putMove(int, string, string);
-bool win();
+int selectMove();
+bool checkBusyBox(int, string);
+void setMove(int, string, string);
+bool isWinnner();
 int obtainingPlayed();
 void cloneBoard();
 int getBestPlay(string);
@@ -30,6 +30,8 @@ char board[35][35];
 char structureConect[7][7]
 int turnPlayer = 1;
 int move;
+const string BOARD = "Real";
+const string IMGBOARD = "Imaginary";
 
 
 
@@ -101,11 +103,48 @@ int selectMove(){
     }
     return move;
 }
-bool checkBusyBox(int move){
+bool checkBusyBox(int move, string board){
     int row, col;
     bool busyBox=false;
     if (move==1||move==2||move==3||move==4||move==5||move==6||move==7){
-        row=0;
-    }else if (move==)
-
+        row=1;
+    }else if (move==8||move==9||move==10||move==11||move==12||move==13||move==14){
+        row=4;
+    }else if (move==15||move==16||move==17||move==18||move==19||move==20||move==21){
+        row=7;
+    }else if(move==22||move==23||move==24||move==25||move==26||move==27||move==28){
+        row=10;
+    }else if (move==29||move==30||move==31||move==32||move==33||move==34||move==35){
+        row=13;
+    }else if (move==36||move==37||move==38||move==39||move==40||move==41||move==42){
+        row=16;
+    }
+    if (move==||move==||move==||move==||move==|move==||move==){
+        col=
+    }else if (move==||move==||move==||move==||move==||move==||move==){
+        col=
+    }else if (move==||move==||move==||move==||move==||move==||move==){
+        col=
+    }else if (move==||move==||move==||move==||move==||move==||move==){
+        col=
+    }else if (move==||move==||move==||move==||move==||move==||move==){
+        col=
+    }else if (move==||move==||move==||move==||move==||move==||move==){
+        col=
+    }
+    if (board == BOARD)
+    {
+        if (position[row][col] == '0' || position[row][col] == 'O')
+        {
+            return true;
+        }
+    }
+    else if (board == IMGBOARD)
+    {
+        if (positionIMG[row][col] == '0' || positionIMG[row][col] == 'O')
+        {
+            return true;
+        }
+    }
+    return busyBox;    
 }
