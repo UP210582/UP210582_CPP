@@ -11,63 +11,32 @@ Description: Game of Conect 4
 Last Modification: 24/11/2022
 */
 
-
-//used bookstores
+// used bookstores
 #include <iostream>
 
 using namespace std;
 
 void doBoard();
-int selectMove();
-bool checkBusyBox(int, string);
-void setMove(int, string, string);
-bool isWinnner(string);
-int obtainingPlayed();
-void cloneBoard();
-int getBestPlay(string);
+int selectCol();
+int checkBusyRow(int);
+bool isWinner(int);
 
-char board[35][35];
-char structureConect[7][7]
-int move, turn=1;
-const string BOARD = "Real";
-const string IMGBOARD = "Imaginary";
-const string PC = "Machine";
-const string PERSON = "Human";
+int col, row, turn = 1;
+char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                       {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                       {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                       {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                       {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                       {' ', ' ', ' ', ' ', ' ', ' ', ' '}};
 
-
-
-int main (){
-    system("clear");
-    bool gameover = false;
-    int play;
-    bool occupiedBox = true;
-    int mode;
-
-    void doBoard();
-    /*
-    cout << "Welcome to Conect 4" << endl;
-    cout << "Choose your game mode" << endl;
-    cout << "1 SinglePlayer" << endl;
-    cout << "2 Multiplayer" << endl;
-    cin >> mode;
-    
-    if (mode == 1)
-    {
-        do
-        {
-            system("clear");
-            if (turno)
-            {
-                doBoard()
-                selectedPlay()
-
-            }
-        } while (/* condition */);
-    // } */
-
+int main()
+{
+    doBoard();
+    selectCol();
 }
 
-void doBoard(){
+void doBoard()
+{
 
     char board[22][43];
 
@@ -94,126 +63,67 @@ void doBoard(){
         }
         cout << endl;
     }
-
 }
 
-int selectMove(){
-    int move;
-    cout << "Choose a column: ";
-    cin >> move;
-    while (move < 1 || move > 42){
-        cout << "This is incorrect, choose another column: ";
-        cin >> move;
-    }
-    return move;
-}
-bool checkBusyBox(int move, string board){
-    int row, col;
-    bool busyBox=false;
-    if (move==1||move==2||move==3||move==4||move==5||move==6||move==7){
-        row=1;
-    }else if (move==8||move==9||move==10||move==11||move==12||move==13||move==14){
-        row=4;
-    }else if (move==15||move==16||move==17||move==18||move==19||move==20||move==21){
-        row=7;
-    }else if(move==22||move==23||move==24||move==25||move==26||move==27||move==28){
-        row=10;
-    }else if (move==29||move==30||move==31||move==32||move==33||move==34||move==35){
-        row=13;
-    }else if (move==36||move==37||move==38||move==39||move==40||move==41||move==42){
-        row=16;
-    }
-    if (move==||move==||move==||move==||move==|move==||move==){
-        col=
-    }else if (move==||move==||move==||move==||move==||move==||move==){
-        col=
-    }else if (move==||move==||move==||move==||move==||move==||move==){
-        col=
-    }else if (move==||move==||move==||move==||move==||move==||move==){
-        col=
-    }else if (move==||move==||move==||move==||move==||move==||move==){
-        col=
-    }else if (move==||move==||move==||move==||move==||move==||move==){
-        col=
-    }
-    if (board == BOARD)
-    {
-        if (position[row][col] == '0' || position[row][col] == 'O')
-        {
-            return true;
-        }
-    }
-    else if (board == IMGBOARD)
-    {
-        if (positionIMG[row][col] == '0' || positionIMG[row][col] == 'O')
-        {
-            return true;
-        }
-    }
-    return busyBox;    
-}
-
-void setMove(int move, string board, string player){
-
-    char moveValue;
-    int row=0, col=0;
-    if (turn % 2 == 0)
-        moveValue = '0';
-    else
-        moveValue = 'O';
-
-    if (board == BOARD)
-    {
-        position[row][col] = moveValue;
-    }
-    else if (board == IMGBOARD)
-    {
-        if (player == PERSON)
-        {
-            moveValue = 'O';
-        }
-        else if (player == PC)
-        {
-            moveValue = '0';
-        }
-        positionIMG[row][col] = moveValue;
-    }
-}
-
-bool isWinner(string board){
-    if (board==BOARD){
-        
-    }
-}
-int selectMovePC()
+int selectCol()
 {
-    bool boxBusy = false;
-    int play;
-    srand(time(NULL));
-    play = getBetterPlay(PC);
-    if (play != -1)
+    cout << "Choose a column: ";
+    cin >> col;
+    while (col < 1 || col > 7)
     {
-        return play;
+        cout << "This is incorrect, choose another column: ";
+        cin >> col;
     }
-    play = getBetterPlay(PERSON);
-    if (play != -1)
-    {
-        return play;
-    }
-    do
-    {
-        play = 1 + rand() % 9;
-        boxBusy = checkBusyBox(play,BOARD);
-    }while (boxBusy == true);
-    return play;
+    return col;
 }
 
-void cloneBoard(){
-    for (int row = 0; row < 9; row++)
+int checkBusyRow(int col)
+{
+    for (int row = 6; row > 0; row--)
     {
-        for (int col = 0; col < 17; col++)
+        if (gameArea[row][col] == ' ')
         {
-            positionIMG[row][col] = position[row][col];
+            return row;
+        }
+    }
+    return -1;
+}
+
+void setCol(int row, int col)
+{
+    char value;
+    if (turn % 2 == 0)
+        value = '0';
+    else
+        value = 'O';
+    gameArea[row][col] = value;
+}
+
+bool isWinner(int col)
+{
+    for (row = 6; row > 0; row--)
+    {
+        for (int col2 = col; col2 <= 7; col2++)
+        {
+            if (gameArea[row][col] == gameArea[row][col] && gameArea[row][col] == gameArea[row][col])
+            {
+                return true;
+            }else {
+                return false;
+            }
+        }
+    }
+
+    for (row = 6; row > 0; row--)
+    {
+        for (int col2 = col; col2 <= 7; col2--)
+        {
+            if (gameArea[row][col] == gameArea[row][col] && gameArea[row][col] == gameArea[row][col])
+            {
+                return true;
+            }else {
+                return false;
+            }
         }
     }
 }
