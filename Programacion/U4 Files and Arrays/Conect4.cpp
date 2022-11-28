@@ -69,29 +69,32 @@ int main (){
 
 void doBoard(){
 
-    int row;
-    int col;
+    char board[22][43];
 
-    for (int  row = 0; row < 35; row++)
+    for (int row = 0; row < 22; row++)
     {
-        for (int col = 0; col < 35; col++)
+        for (int col = 0; col < 43; col++)
         {
-            if (col%4==0 )
+            if (row == 21)
+            {
+                cout << "¯";
+            }
+            else if (row % 3 == 0 && col != 0 && col != 6 && col != 12 && col != 18 && col != 24 && col != 30 && col != 36 && col != 42)
+            {
+                cout << "¯";
+            }
+            else if (col % 6 == 0)
             {
                 cout << "|";
             }
-            else if (row%4==0 )
+            else if (row != 0)
             {
-                cout << "_";
+                cout << " ";
             }
-            else
-            {
-                cout << "x";
-            }   
-            
         }
-        
+        cout << endl;
     }
+
 }
 
 int selectMove(){
