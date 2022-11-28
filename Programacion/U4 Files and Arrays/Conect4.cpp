@@ -21,7 +21,7 @@ void doBoard();
 int selectMove();
 bool checkBusyBox(int, string);
 void setMove(int, string, string);
-bool isWinnner();
+bool isWinnner(string);
 int obtainingPlayed();
 void cloneBoard();
 int getBestPlay(string);
@@ -175,5 +175,42 @@ void setMove(int move, string board, string player){
         }
         positionIMG[row][col] = moveValue;
     }
+}
 
+bool isWinner(string board){
+    if (board==BOARD){
+        
+    }
+}
+int selectMovePC()
+{
+    bool boxBusy = false;
+    int play;
+    srand(time(NULL));
+    play = getBetterPlay(PC);
+    if (play != -1)
+    {
+        return play;
+    }
+    play = getBetterPlay(PERSON);
+    if (play != -1)
+    {
+        return play;
+    }
+    do
+    {
+        play = 1 + rand() % 9;
+        boxBusy = checkBusyBox(play,BOARD);
+    }while (boxBusy == true);
+    return play;
+}
+
+void cloneBoard(){
+    for (int row = 0; row < 9; row++)
+    {
+        for (int col = 0; col < 17; col++)
+        {
+            positionIMG[row][col] = position[row][col];
+        }
+    }
 }
