@@ -21,7 +21,7 @@ int selectCol();
 int checkBusyRow(int);
 void setCol(int,int);
 
-bool isWinner(int);
+
 
 int col, row, turn = 1;
 char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
@@ -34,7 +34,7 @@ char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
 int main()
 {
     int busyRow=-1;
-    bool winner=false;
+    
     doBoard();
     selectCol();
     busyRow = checkBusyRow(col);
@@ -45,7 +45,7 @@ int main()
         system ("clear");
         doBoard();
         cout << endl;
-        winner = isWinner(col);
+        
         turn++;
 
     }
@@ -107,7 +107,8 @@ int selectCol()
 {
     cout << "Choose a column: ";
     cin >> col;
-    while (col < 1 || col > 7)
+    col--;
+    while (col < 0 || col > 6)
     {
         cout << "This is incorrect, choose another column: ";
         cin >> col;
