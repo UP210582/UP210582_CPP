@@ -19,6 +19,8 @@ using namespace std;
 void doBoard();
 int selectCol();
 int checkBusyRow(int);
+void setCol(int,int);
+
 bool isWinner(int);
 
 int col, row, turn = 1;
@@ -31,8 +33,22 @@ char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
 
 int main()
 {
+    int busyRow=-1;
+    bool winner=false;
     doBoard();
     selectCol();
+    busyRow = checkBusyRow(col);
+    if (busyRow==-1){
+        cout << "Please, select other coulum: ";
+    }else {
+        setCol(row, col);
+        system ("clear");
+        doBoard();
+        cout << endl;
+        winner = isWinner(col);
+        turn++;
+
+    }
 }
 
 void doBoard()
@@ -121,31 +137,3 @@ void setCol(int row, int col)
     gameArea[row][col] = value;
 }
 
-bool isWinner(int col)
-{
-    for (row = 6; row > 0; row--)
-    {
-        for (int col2 = col; col2 <= 7; col2++)
-        {
-            if (gameArea[row][col] == gameArea[row][col] && gameArea[row][col] == gameArea[row][col])
-            {
-                return true;
-            }else {
-                return false;
-            }
-        }
-    }
-
-    for (row = 6; row > 0; row--)
-    {
-        for (int col2 = col; col2 <= 7; col2--)
-        {
-            if (gameArea[row][col] == gameArea[row][col] && gameArea[row][col] == gameArea[row][col])
-            {
-                return true;
-            }else {
-                return false;
-            }
-        }
-    }
-}
