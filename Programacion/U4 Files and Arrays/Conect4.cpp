@@ -22,7 +22,7 @@ int checkBusyRow(int);
 bool isWinner(int);
 
 int col, row, turn = 1;
-char gameArea[6][7] = {{'p', 'r', 'u', 'e', 'b', 'a', '1'},
+char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
