@@ -19,16 +19,13 @@ using namespace std;
 void doBoard();
 int selectCol();
 int checkBusyRow(int);
-<<<<<<< HEAD
 void setCol(int, int);
 bool checkHorizaontalMoves(int, int);
 bool checkVerticalMoves(int, int);
 bool isWinner(int);
-=======
 void setCol(int,int);
 
 
->>>>>>> d91023cf73e7678801053b6770a510b1c82361b3
 
 int col, row, turn = 1;
 char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
@@ -40,13 +37,10 @@ char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
 
 int main()
 {
-<<<<<<< HEAD
     int busyRow = -1;
     bool winner = false;
-=======
     int busyRow=-1;
     
->>>>>>> d91023cf73e7678801053b6770a510b1c82361b3
     doBoard();
     selectCol();
     busyRow = checkBusyRow(col);
