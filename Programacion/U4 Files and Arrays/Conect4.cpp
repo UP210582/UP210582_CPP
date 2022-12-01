@@ -186,7 +186,7 @@ bool checkVerticalMoves(int row, int col){
             coulum = col;
         }
     }
-    while (value !='0' && isWinner == false)
+    while (selCol !='0' && isWinner == false)
     {
         //down
         if (gameArea[row][col]=='O'){
