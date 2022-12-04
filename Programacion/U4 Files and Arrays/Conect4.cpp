@@ -22,10 +22,8 @@ int checkBusyRow(int);
 void setCol(int, int);
 bool checkHorizaontalMoves(int, int);
 bool checkVerticalMoves(int, int);
-bool isWinner(int);
-void setCol(int,int);
-
-
+bool isWinner();
+void setCol(int, int);
 
 int col, row, turn = 1;
 char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
@@ -39,8 +37,6 @@ int main()
 {
     int busyRow = -1;
     bool winner = false;
-    int busyRow=-1;
-    
     doBoard();
     selectCol();
     busyRow = checkBusyRow(col);
@@ -50,11 +46,13 @@ int main()
     }
     else
     {
-        setCol(row, col);
+        setCol(busyRow, col);
         system("clear");
         doBoard();
         cout << endl;
-        
+        /*
+        winner = isWinner();
+        */
         turn++;
     }
 }
@@ -108,6 +106,7 @@ void doBoard()
 
 int selectCol()
 {
+    cout << "Player  " << turn % 2 + 1 << endl;
     cout << "Choose a column: ";
     cin >> col;
     col--;
@@ -121,7 +120,7 @@ int selectCol()
 
 int checkBusyRow(int col)
 {
-    for (int row = 6; row > 0; row--)
+    for (int row = 5; row > 0; row--)
     {
         if (gameArea[row][col] == ' ')
         {
@@ -145,136 +144,134 @@ bool checkHorizontalMoves(int row, int col)
 {
     bool isWinner = false;
     int coulum = col, acum = 0;
-     
-    while (setCol != '0')
+    int nCol = col + 1;
+    int n2Col = col - 1;
+    while (gameArea[row][col] == gameArea[row][nCol])
     {
-        //right
-        if (gameArea[row][col] == '0')
-        {
-            acum++;
-            col++;
-        }
-        else
-        {
-            coulum = col;
-        }
+        acum++;
+        nCol++;
     }
-    while (setCol != '0' && isWinner == false)
+    coulum = col;
+    while (gameArea[row][col] == gameArea[row][n2Col])
     {
-        //left
-        if (gameArea[row][col]=='O'){
-            acum++;
-            col--;
-        }else {
-            coulum=col;
-        }
+        acum++;
+        n2Col--;
     }
-    if (acum==4){
+    if (acum == 4)
+    {
         return true;
-    }else {
+    }
+    else
+    {
         return false;
     }
 }
 
-bool checkVerticalMoves(int row, int col){
+bool checkVerticalMoves(int row, int col)
+{
     bool isWinner = false;
-    int coulum = col, acum = 0;
-    while (setCol != 'O')
+    int row1 = row, acum = 0;
+    int nRow = row + 1;
+    int n2Row = row - 1;
+    while (gameArea[row][col] == gameArea[nRow][col])
     {
-        //up
-        if (gameArea[row][col] == '0')
-        {
-            acum++;
-            row++;
-        }
-        else
-        {
-            coulum = col;
-        }
+        acum++;
+        nRow++;
     }
-    while (selCol !='0' && isWinner == false)
+    row1 = row;
+    while (gameArea[row][col] == gameArea[n2Row][col])
     {
-        //down
-        if (gameArea[row][col]=='O'){
-            acum++;
-            row--;
-        }else {
-            coulum=col;
-        }
+        acum++;
+        n2Row--;
     }
-    if (acum==4){
+    if (acum == 4)
+    {
         return true;
-    }else {
+    }
+    else
+    {
         return false;
     }
 }
 
-bool checkPositiveDiagonallyMoves(int row, int col){
+bool checkPositiveDiagonallyMoves(int row, int col)
+{
     bool isWinner = false;
-    int coulum = col, acum = 0;
-    while (setCol != 'O')
+    int coulum = col, row1 = row, acum = 0;
+    int nRow = row - 1;
+    int nCol = col + 1;
+    int n2Row = row + 1;
+    int n2Col = col - 1;
+    while (gameArea[row][col] == gameArea[nRow][nCol])
     {
-        //up
-        if (gameArea[row][col] == '0')
-        {
-            acum++;
-            col++;
-            row--;
-        }
-        else
-        {
-            coulum = col;
-        }
+        acum++;
+        nCol++;
+        nRow--;
     }
-    while (setCol != '0' && isWinner == false)
+    coulum = col;
+    row1 = row;
+    while (gameArea[row][col] == gameArea[n2Row][n2Col])
     {
-        //down
-        if (gameArea[row][col]=='O'){
-            acum++;
-            col--;
-            row++;
-        }else {
-            coulum=col;
-        }
+        acum++;
+        n2Col--;
+        n2Row++;
     }
-    if (acum==4){
+    if (acum == 4)
+    {
         return true;
-    }else {
+    }
+    else
+    {
         return false;
     }
 }
 
-bool checkNegativeDiagonallyMoves(int row, int col){
+bool checkNegativeDiagonallyMoves(int row, int col)
+{
     bool isWinner = false;
-    int coulum = col, acum = 0;
-    while (setCol != 'O')
+    int coulum = col, row1 = row, acum = 0;
+    int nRow = row - 1;
+    int nCol = col - 1;
+    int n2Row = row + 1;
+    int n2Col = col + 1;
+    while (gameArea[row][col] == gameArea[nRow][nCol])
     {
-        //up
-        if (gameArea[row][col] == '0')
-        {
-            acum++;
-            col--;
-            row++;
-        }
-        else
-        {
-            coulum = col;
-        }
+        acum++;
+        nCol--;
+        nRow--;
     }
-    while (setCol != '0' && isWinner == false)
+    coulum = col;
+    row1 = row;
+    while (gameArea[row][col] == gameArea[n2Row][n2Col])
     {
-        //down
-        if (gameArea[row][col]=='O'){
-            acum++;
-            col++;
-            row++;
-        }else {
-            coulum=col;
-        }
+        acum++;
+        n2Col++;
+        n2Row++;
     }
-    if (acum==4){
+    if (acum == 4)
+    {
         return true;
-    }else {
+    }
+    else
+    {
         return false;
     }
 }
+/*
+bool isWinner()
+{
+    bool isWinnerHorizontal = false;
+    bool isWinnerVertical = false;
+    bool isWinnerPositiveDiagonally = false;
+    bool isWinnerNegativeDiagonally = false;
+    isWinnerHorizontal = checkHorizaontalMoves(row, col);
+    isWinnerVertical = checkVerticalMoves(row, col);
+    isWinnerPositiveDiagonally = checkPositiveDiagonallyMoves(row, col);
+    isWinnerNegativeDiagonally = checkNegativeDiagonallyMoves(row, col);
+    if (isWinnerHorizontal == true || isWinnerVertical == true || isWinnerPositiveDiagonally == true || isWinnerNegativeDiagonally == true)
+    {
+        return true;
+    }
+    return false;
+}
+*/
