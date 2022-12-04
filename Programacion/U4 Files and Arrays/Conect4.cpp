@@ -19,19 +19,18 @@ using namespace std;
 void doBoard();
 int selectCol();
 int checkBusyRow(int);
-void setCol(int, int);
-bool checkHorizaontalMoves(int, int);
-bool checkVerticalMoves(int, int);
+bool checkHorizaontalMoves(int row, int col);
+bool checkVerticalMoves(int row, int col);
 bool isWinner();
 void setCol(int, int);
 
 int col, row, turn = 1;
 char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                       {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                       {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                       {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                       {' ', ' ', ' ', ' ', ' ', ' ', ' '}};
+                       {' ', ' ', ' ', '0', ' ', ' ', ' '},
+                       {' ', ' ', '0', '0', ' ', ' ', ' '},
+                       {' ', '0', 'O', 'O', ' ', ' ', ' '},
+                       {' ', 'O', '0', 'O', '0', 'O', '0'}};
 
 int main()
 {
@@ -50,9 +49,9 @@ int main()
         system("clear");
         doBoard();
         cout << endl;
-        /*
+        
         winner = isWinner();
-        */
+        
         turn++;
     }
 }
@@ -106,7 +105,7 @@ void doBoard()
 
 int selectCol()
 {
-    cout << "Player  " << turn % 2 + 1 << endl;
+    cout << "Player  " << turn % 2 << endl;
     cout << "Choose a column: ";
     cin >> col;
     col--;
@@ -257,21 +256,20 @@ bool checkNegativeDiagonallyMoves(int row, int col)
         return false;
     }
 }
-/*
+
 bool isWinner()
 {
     bool isWinnerHorizontal = false;
     bool isWinnerVertical = false;
     bool isWinnerPositiveDiagonally = false;
     bool isWinnerNegativeDiagonally = false;
-    isWinnerHorizontal = checkHorizaontalMoves(row, col);
-    isWinnerVertical = checkVerticalMoves(row, col);
-    isWinnerPositiveDiagonally = checkPositiveDiagonallyMoves(row, col);
-    isWinnerNegativeDiagonally = checkNegativeDiagonallyMoves(row, col);
+    isWinnerHorizontal = checkHorizaontalMoves;
+    isWinnerVertical = checkVerticalMoves;
+    isWinnerPositiveDiagonally = checkPositiveDiagonallyMoves;
+    isWinnerNegativeDiagonally = checkNegativeDiagonallyMoves;
     if (isWinnerHorizontal == true || isWinnerVertical == true || isWinnerPositiveDiagonally == true || isWinnerNegativeDiagonally == true)
     {
         return true;
     }
     return false;
 }
-*/
