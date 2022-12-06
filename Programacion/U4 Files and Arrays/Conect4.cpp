@@ -22,12 +22,17 @@ using namespace std;
 
 void doBoard();
 int selectCol();
-int checkBusyRow(int);
-void setCol(int, int);
+int checkBusyRow(int, string);
 bool checkHorizaontalMoves(int, int);
 bool checkVerticalMoves(int, int);
-bool isWinner();
-void setCol(int, int);
+bool checkPositiveDiagonallyMoves(int, int);
+bool checkNegativeDiagonallyMoves(int, int);
+void setCol(int, int, string, string);
+bool isWinner(string);
+int getColPC();
+void coleBoard();
+int getBetterCol(string);
+int selectColPC();
 
 int col, row, turn = 1;
 char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
@@ -37,28 +42,97 @@ char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {' ', ' ', ' ', ' ', ' ', ' ', ' '}};
 
+char gameAreaIMG[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                          {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                          {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                          {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                          {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                          {' ', ' ', ' ', ' ', ' ', ' ', ' '}};
+const string PC = "Machine";
+const string PERSON = "Person";
+const string BOARD = "Real";
+const string IMGBOARD = "Imaginary";
+
 int main()
 {
-    int busyRow = -1;
     bool winner = false;
-    doBoard();
-    selectCol();
-    busyRow = checkBusyRow(col);
-    if (busyRow == -1)
+    char option;
+    cout << "Press Y to play or X to exit the game:  ";
+    cin >> option;
+    if (option == 'Y' || option == 'y')
     {
-        cout << "Please, select other coulum: ";
+        int gameType = 1;
+        int busyRow = -1;
+        cout << "\x1B[38;2;255;151;203m"
+             << "Menu"
+             << "\x1b[0m" << endl;
+        cout << "1. Player vs Player" << endl;
+        cout << "2. Player vs PC" << endl;
+        cout << "Plase select the game mood: ";
+        cin >> gameType;
+        doBoard();
+        do
+        {
+            if (gameType == 1)
+            {
+                col = selectCol();
+            }
+            else
+            {
+                if (turn % 2 == 0)
+                {
+                    col = selectCol();
+                }
+                else
+                {
+                    col = selectColPC();
+                }
+            }
+            busyRow = checkBusyRow(col, BOARD);
+            if (busyRow == -1)
+            {
+                cout << "Please, select other coulum: ";
+            }
+            else
+            {
+                setCol(busyRow, col, BOARD, PERSON);
+                system("clear");
+                doBoard();
+                cout << endl;
+                winner = isWinner(BOARD);
+                turn++;
+            }
+        } while (turn <= 42 && winner == false);
+        if (winner == true)
+        {
+            if (turn % 2 == 0)
+            {
+                cout << "\x1B[38;2;255;151;203m"
+                     << "Congrats player 2, you won"
+                     << "\x1b[0m" << endl;
+            }
+            else
+            {
+                cout << "\x1B[38;2;255;151;203m"
+                     << "Congrats player 1, you won"
+                     << "\x1b[0m" << endl;
+            }
+        }
+        else if (winner == false)
+        {
+            cout << "\x1B[38;2;255;151;203m"
+                 << "Tontes ninguno gano :/"
+                 << "\x1b[0m" << endl;
+        }
     }
     else
     {
-        setCol(busyRow, col);
-        system("clear");
-        doBoard();
         cout << endl;
-        /*
-        winner = isWinner();
-        */
-        turn++;
+        cout << "\x1B[38;2;255;151;203m"
+             << "I didn't even want you to play :D"
+             << "\x1b[0m" << endl;
     }
+    return 0;
 }
 
 void doBoard()
@@ -126,7 +200,7 @@ void doBoard()
 
 int selectCol()
 {
-    cout << "Player  " << turn % 2 + 1 << endl;
+    cout << "Player  " << turn % 2 << endl;
     cout << "Choose a column: ";
     cin >> col;
     col--;
@@ -138,26 +212,54 @@ int selectCol()
     return col;
 }
 
-int checkBusyRow(int col)
+int checkBusyRow(int col, string board)
 {
-    for (int row = 5; row > 0; row--)
+    if (board == BOARD)
     {
-        if (gameArea[row][col] == ' ')
+        for (int row = 5; row > 0; row--)
         {
-            return row;
+            if (gameArea[row][col] == ' ')
+            {
+                return row;
+            }
+        }
+    }
+    else if (board == IMGBOARD)
+    {
+        for (int row = 5; row > 0; row--)
+        {
+            if (gameAreaIMG[row][col] == ' ')
+            {
+                return row;
+            }
         }
     }
     return -1;
 }
 
-void setCol(int row, int col)
+void setCol(int row, int col, string board, string player)
 {
     char value;
     if (turn % 2 == 0)
         value = '0';
     else
         value = 'O';
-    gameArea[row][col] = value;
+    if (board == BOARD)
+    {
+        gameArea[row][col] = value;
+    }
+    else if (board == IMGBOARD)
+    {
+        if (player == PERSON)
+        {
+            value = 'O';
+        }
+        else if (player == PC)
+        {
+            value = '0';
+        }
+        gameAreaIMG[row][col] = value;
+    }
 }
 
 bool checkHorizontalMoves(int row, int col)
@@ -278,19 +380,116 @@ bool checkNegativeDiagonallyMoves(int row, int col)
     }
 }
 
+<<<<<<< HEAD
 bool isWinner()
+=======
+bool isWinner(string board)
+>>>>>>> fe485053652b7052898e5e47d08903762d3dbd0d
 {
-    bool isWinnerHorizontal = false;
-    bool isWinnerVertical = false;
-    bool isWinnerPositiveDiagonally = false;
-    bool isWinnerNegativeDiagonally = false;
-    isWinnerHorizontal = checkHorizaontalMoves(row, col);
-    isWinnerVertical = checkVerticalMoves(row, col);
-    isWinnerPositiveDiagonally = checkPositiveDiagonallyMoves(row, col);
-    isWinnerNegativeDiagonally = checkNegativeDiagonallyMoves(row, col);
-    if (isWinnerHorizontal == true || isWinnerVertical == true || isWinnerPositiveDiagonally == true || isWinnerNegativeDiagonally == true)
+    if (board == BOARD)
     {
-        return true;
+        bool isWinnerHorizontal = false;
+        bool isWinnerVertical = false;
+        bool isWinnerPositiveDiagonally = false;
+        bool isWinnerNegativeDiagonally = false;
+        isWinnerHorizontal = checkHorizaontalMoves;
+        isWinnerVertical = checkVerticalMoves;
+        isWinnerPositiveDiagonally = checkPositiveDiagonallyMoves;
+        isWinnerNegativeDiagonally = checkNegativeDiagonallyMoves;
+        if (isWinnerHorizontal == true || isWinnerVertical == true || isWinnerPositiveDiagonally == true || isWinnerNegativeDiagonally == true)
+        {
+            return true;
+        }
+        return false;
     }
+    else if (board == IMGBOARD)
+    {
+        bool isWinnerHorizontal = false;
+        bool isWinnerVertical = false;
+        bool isWinnerPositiveDiagonally = false;
+        bool isWinnerNegativeDiagonally = false;
+        isWinnerHorizontal = checkHorizaontalMoves;
+        isWinnerVertical = checkVerticalMoves;
+        isWinnerPositiveDiagonally = checkPositiveDiagonallyMoves;
+        isWinnerNegativeDiagonally = checkNegativeDiagonallyMoves;
+        if (isWinnerHorizontal == true || isWinnerVertical == true || isWinnerPositiveDiagonally == true || isWinnerNegativeDiagonally == true)
+        {
+            return true;
+        }
+    }else 
     return false;
 }
+<<<<<<< HEAD
+=======
+
+int selectColPC()
+{
+    bool busyRow = false;
+    int col;
+    srand(time(NULL));
+    col = getBetterCol(PC);
+    if (col != -1)
+    {
+        return col;
+    }
+    col = getBetterCol(PERSON);
+    if (col != -1)
+    {
+        return col;
+    }
+    do
+    {
+        col = 1 + rand() % 7;
+        busyRow = checkBusyRow(col, BOARD);
+    } while (busyRow == true);
+    return col;
+}
+
+void cloneBoard()
+{
+    for (int row = 0; row < 6; row++)
+    {
+        for (int col = 0; col < 7; col++)
+        {
+            gameAreaIMG[row][col] = gameArea[row][col];
+        }
+    }
+}
+
+int getBetterCol(string player){
+    bool busyRow = false;
+    bool winner = false;
+    int col = 0;
+    cloneBoard();
+    if (player == PC)
+    {
+        do
+        {
+            col++;
+            busyRow=checkBusyRow(col, IMGBOARD);
+            if (busyRow== false){
+                setCol(col, row, IMGBOARD, PC);
+                winner = isWinner (IMGBOARD);
+            }
+            cloneBoard();
+        } while (col <= 7 && winner == false );
+    } 
+    else if (player == PERSON)
+    {
+        do
+        {
+            col++;
+            busyRow=checkBusyRow(col, IMGBOARD);
+            if (busyRow== false){
+                setCol(col, row, IMGBOARD, PERSON);
+                winner = isWinner(IMGBOARD);
+            }
+            cloneBoard();
+        } while (col <= 7 && winner == false);
+    }
+    if (col >= 8){
+        col= -1;
+    }
+    return col;
+}
+>>>>>>> fe485053652b7052898e5e47d08903762d3dbd0d
