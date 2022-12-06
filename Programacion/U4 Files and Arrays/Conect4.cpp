@@ -13,6 +13,10 @@ Last Modification: 24/11/2022
 
 // used bookstores
 #include <iostream>
+#include <unistd.h>
+#include <iostream>
+#include <stdio.h>
+#include <PresentationComponents.h>
 
 using namespace std;
 
@@ -61,33 +65,49 @@ void doBoard()
 {
 
     char board[22][43];
-    char number[1][7] = {'1', '2', '3', '4', '5', '6', '7'};
-    int x = 0;
-    int y = 0;
+    char number[1][7] = { '1','2','3','4','5','6','7'};
     int z = 0;
     int w = 0;
 
-    for (int row = 0; row < 22; row++)
+    for (int i = 0; i < 1; i++)
     {
+        gotoxy(8, 8 + i);
+        for (int j = 0; j < 7; j++)
+        {
+            cout << "   ";
+            cout << number[i][j];
+            cout << "  ";
+        }
+    }
+
+    cout << "\n"
+         << endl;
+
+    for (int row = 0; row < 25; row++)
+    {
+        gotoxy(10, 10 + row);
         for (int col = 0; col < 43; col++)
         {
 
-            if (row % 3 == 0 && col % 6 != 0 || row == 21)
+            if (row % 4 == 0 && col % 6 != 0 || row == 24)
             {
-                cout << "¯";
+                cout << "\x1B[44m"
+                     << "\x1b[34m"
+                     << "¯"
+                     << "\x1b[0m"
+                     << "\x1B[0m";
             }
             else if (col % 6 == 0)
             {
-                cout << "|";
+                cout << "\x1B[44m"
+                     << "\x1b[34m"
+                     << "¦"
+                     << "\x1b[0m"
+                     << "\x1B[0m";
             }
             else if (row != 0)
             {
-                if (row == 1 && col % 3 == 0)
-                {
-                    cout << number[x][y];
-                    y++;
-                }
-                else if ((row == 4 || row == 7 || row == 10 || row == 13 || row == 16 || row == 19) && col % 3 == 0)
+                if (row % 2 == 0 && col % 3 == 0)
                 {
                     cout << gameArea[z][w];
                     w++;
@@ -98,10 +118,10 @@ void doBoard()
                 }
             }
         }
-        cout << endl;
+
+        z++;
+        w = 0;
     }
-    z++;
-    w = 0;
 }
 
 int selectCol()
@@ -257,7 +277,7 @@ bool checkNegativeDiagonallyMoves(int row, int col)
         return false;
     }
 }
-/*
+
 bool isWinner()
 {
     bool isWinnerHorizontal = false;
@@ -274,4 +294,3 @@ bool isWinner()
     }
     return false;
 }
-*/
