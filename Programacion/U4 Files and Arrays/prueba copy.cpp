@@ -13,7 +13,7 @@ int getBetterCol(string);
 int selectColPC();
 
 
-int col, row, turn = 1;
+int col, row, turn = 2;
 char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
@@ -185,173 +185,96 @@ void setCol(int row, int col, string board, string player)
     }
 }
 
-
-bool isWinner(int row, int col){
-    bool isWinner = false;
-    int acum = 1;
-    int arow = 1;
-    int nCol = col + 1;
-    int n2Col = col - 1;
-    int nRow = row + 1;
-    int n2Row = row - 1;
-    int pRow=row-1;
-    int pCol=col+1;
-    int n1Row=row+1;
-    int n1Col=col-1;
-    int n3Row=row-1;
-    int n3Col=col-1;
-    int n4Row=row+1;
-    int n4Col=col+1;
-    
-    //horizontal
-    while (gameArea[row][col] == gameArea[row][nCol])
+bool isWinner(int row, int col, string board){
+    if (board==BOARD)
     {
-        acum++;
-        nCol++;
-    }
-    while (gameArea[row][col] == gameArea[row][n2Col])
-    {
-        acum++;
-        n2Col--;
-    }
-    
-    //vertical
-    while (gameArea[row][col] == gameArea[nRow][col])
-    {
-        acum++;
-        nRow++;
-    }
-    while (gameArea[row][col] == gameArea[n2Row][col])
-    {
-        acum++;
-        n2Row--;
-    }
-    if (acum > 3)
-        return true;
-    acum = 1;
-    //diagonales
-    while (gameArea[row][col] == gameArea[pRow][pCol])
-    {
-        acum++;
-        pRow--;
-        pCol++;
-        
-    }
-    while (gameArea[row][col] == gameArea[n1Row][n1Col])
-    {
-        acum++;
-        n1Row++;
-        n1Col--;
-    }
-    while (gameArea[row][col] == gameArea[n3Row][n3Col])
-    {
-        acum++;
-        n2Row--;
-        n2Col--;
-    }
-    while (gameArea[row][col] == gameArea[n4Row][n4Col])
-    {
-        acum++;
-        n3Row++;
-        n3Col++;
-    }
-
-    if (acum == 4)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}else if (board==BOARD){
-    bool isWinner = false;
-    int acum = 1;
-    int arow = 1;
-    int nCol = col + 1;
-    int n2Col = col - 1;
-    int nRow = row + 1;
-    int n2Row = row - 1;
-    int NRow = row - 1;
-    int NCol = col - 1;
-    int N1Row = row + 1;
-    int N1Col = col + 1;
-    int n1Row = row - 1;
-    int n1Col = col + 1;
-    int N2Row = row + 1;
-    int N2Col = col - 1;
-    //horizontal
-    while (gameArea[row][col] == gameArea[row][nCol])
-    {
-        acum++;
-        nCol++;
-    }
-    while (gameArea[row][col] == gameArea[row][n2Col])
-    {
-        acum++;
-        n2Col--;
-    }
-    if (acum > 3)
-        return true;
-    acum = 1;
-    //vertical
-    while (gameArea[row][col] == gameArea[nRow][col])
-    {
-        acum++;
-        nRow++;
-    }
-    while (gameArea[row][col] == gameArea[n2Row][col])
-    {
-        acum++;
-        n2Row--;
-    }
-    if (acum > 3)
-        return true;
-    acum = 1;
-    //diagonales
-    while (gameArea[row][col] == gameArea[n1Row][n1Col])
-    {
-
-        acum++;
-        n1Col++;
-        n1Row--;
-        
-    }
-    while (gameArea[row][col] == gameArea[N2Row][N2Col])
-    {
-
-        acum++;
-        N2Col--;
-        N2Row++;
-    }
+        bool isWinner = false;
+        int acum = 1;
+        int arow = 1;
+        int nCol = col + 1;
+        int n2Col = col - 1;
+        int nRow = row + 1;
+        int n2Row = row - 1;
+        int NRow = row - 1;
+        int NCol = col - 1;
+        int N1Row = row + 1;
+        int N1Col = col + 1;
+        int n1Row = row - 1;
+        int n1Col = col + 1;
+        int N2Row = row + 1;
+        int N2Col = col - 1;
+        //horizontal
+        while (gameArea[row][col] == gameArea[row][nCol])
+        {
+            acum++;
+            nCol++;
+        }
+        while (gameArea[row][col] == gameArea[row][n2Col])
+        {
+            acum++;
+            n2Col--;
+        }
         if (acum > 3)
-        return true;
-    acum = 1;
-    while (gameArea[row][col] == gameArea[NRow][NCol])
-    {
+            return true;
+        acum = 1;
+        //vertical
+        while (gameArea[row][col] == gameArea[nRow][col])
+        {
+            acum++;
+            nRow++;
+        }
+        while (gameArea[row][col] == gameArea[n2Row][col])
+        {
+            acum++;
+            n2Row--;
+        }
+        if (acum > 3)
+            return true;
+        acum = 1;
+        //diagonales
+        while (gameArea[row][col] == gameArea[n1Row][n1Col])
+        {
 
-        acum++;
-        NCol--;
-        NRow--;
-    }
-    while (gameArea[row][col] == gameArea[N1Row][N1Col])
-    {
+            acum++;
+            n1Col++;
+            n1Row--;
+            
+        }
+        while (gameArea[row][col] == gameArea[N2Row][N2Col])
+        {
 
-        acum++;
-        N1Col++;
-        N1Row++;
-    }
+            acum++;
+            N2Col--;
+            N2Row++;
+        }
+            if (acum > 3)
+            return true;
+        acum = 1;
+        while (gameArea[row][col] == gameArea[NRow][NCol])
+        {
 
-    if (acum == 4)
-    {
-        return true;
+            acum++;
+            NCol--;
+            NRow--;
+        }
+        while (gameArea[row][col] == gameArea[N1Row][N1Col])
+        {
+
+            acum++;
+            N1Col++;
+            N1Row++;
+        }
+
+        if (acum == 4)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    else
-    {
-        return false;
-    }
-}
-return false;
+    return false;
 }
 
 int selectColPC(){
