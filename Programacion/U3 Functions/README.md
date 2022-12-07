@@ -33,7 +33,7 @@ In order to enjoy the single player and multiplayer game modes, you first need t
 1. Download or clone my repo with the following command in the terminal:
    
 ~~~
-"git clone https://github.com/UP210052/UP210052_CPP.git"
+"git clone https://github.com/UP210582/UP210582_CPP.git"
 ~~~
 
 2. Download and install the compiler in this link https://sourceforge.net/projects/mingw/files/OldFiles/ 
@@ -60,7 +60,7 @@ gcc  04_Gato.cpp -o 04_Gato.exe
 1. Download or clone my repo with the following command in the terminal:
    
 ~~~
-"git clone https://github.com/UP210052/UP210052_CPP.git"
+"git clone https://github.com/UP210582/UP210582_CPP.git"
 ~~~
 
 2. Install GNU c/c++ compiler, open the terminal and type:
