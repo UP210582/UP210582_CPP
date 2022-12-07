@@ -71,7 +71,7 @@ int main()
         cout << "2. Player vs PC" << endl;
         cout << "Plase select the game mood: ";
         cin >> gameType;
-        doBoard();
+    doBoard();
         do
         {
             if (gameType == 1)
@@ -92,17 +92,25 @@ int main()
             row = checkBusyRow(col, BOARD);
             if (row == -1)
             {
-                cout << "Please, select other coulum: ";
+        cout << "Please, select other coulum: ";
             }
             else
             {
                 setCol(busyRow, col, BOARD, PERSON);
                 system("clear");
+<<<<<<< HEAD
                 doBoard();
                 cout << endl;
                 winner = isWinner(row, col, BOARD);
                 turn++;
             }
+=======
+        doBoard();
+        cout << endl;
+                winner = isWinner(BOARD);
+        turn++;
+    }
+>>>>>>> 48726d7dfe2e796af594f44b2b85438e9cf796ff
         } while (turn <= 42 && winner == false);
         if (winner == true)
         {
@@ -157,7 +165,7 @@ void doBoard()
         //gotoxy(10, 10 + row);
         for (int col = 0; col < 43; col++)
         {
-
+            
             if (row % 4 == 0 && col % 6 != 0 || row == 24)
             {
                 cout << "\x1B[44m"
@@ -211,13 +219,17 @@ int checkBusyRow(int col, string board)
 {
     if (board == BOARD)
     {
+<<<<<<< HEAD
         for (int row = 5; row >= 0; row--)
+=======
+        for (int row = 5; row > 0; row--)
+    {
+        if (gameArea[row][col] == ' ')
+>>>>>>> 48726d7dfe2e796af594f44b2b85438e9cf796ff
         {
-            if (gameArea[row][col] == ' ')
-            {
-                return row;
-            }
+            return row;
         }
+    }
     }
     else if (board == IMGBOARD)
     {
@@ -241,8 +253,8 @@ void setCol(int row, int col, string board, string player)
         value = 'O';
     if (board == BOARD)
     {
-        gameArea[row][col] = value;
-    }
+    gameArea[row][col] = value;
+}
     else if (board == IMGBOARD)
     {
         if (player == PERSON)
