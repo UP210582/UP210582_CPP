@@ -93,7 +93,8 @@ to start the game you can only put 1, 2 or 3 if you try to put another value whi
 ## Flow Diagram
 </div>
 
-![Refresh the page for see the image](https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/FlowDiagramConect4.drawio.png)
+<img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/flowConect.png
+alt="Sourcerer" width=300>
 
 [Index](#Index) 
 
