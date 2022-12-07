@@ -102,7 +102,8 @@ alt="Sourcerer" width=300>
 
 ## Development
 </div>
-fsdfdsfsfdsfdsfdsfdsf
+
+
 
 [Index](#Index) 
 
@@ -110,6 +111,11 @@ fsdfdsfsfdsfdsfdsfdsf
 
 ## Conclusions
 </div>
-dfsddfdsdsfdsds
+
+This project was a real challenge because for the creation of the single player game mode we had to develop an intelligence that could predict the moves and use this prediction in their favor, for this we use a copy of the board with the moves already established, this intelligence reviews each of the squares and determines which of them will provide the victory, and with this we solved the difficult.
+
+The code has nothing of order is not consecutive since we use the creation of functions which we can call to use them later and thus not to have to be repeating many times the same code which will do the same thing again and again, for it we had to create functions that were concise and precise to be able to call them again and again and thus to be more fluid and efficient the work.
+
+Another challenge was to create the algorithm which would check all the squares adjacent to the move, since in the part to verify the diagonal moves the accumulator did not work efficiently to solve this we asked the teacher and he solved it.
 
 [Index](#Index) 
