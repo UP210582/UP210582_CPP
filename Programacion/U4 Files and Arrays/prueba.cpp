@@ -8,7 +8,7 @@ int checkBusyRow(int);
 void setCol(int, int);
 bool isWinner(int,int);
 
-int col, row, turn = 1;
+int col, row, turn = 2;
 char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
@@ -142,6 +142,7 @@ bool isWinner(int row, int col){
 
     bool isWinner = false;
     int acum = 1;
+    int arow = 1;
     int nCol = col + 1;
     int n2Col = col - 1;
     int nRow = row + 1;
@@ -165,6 +166,9 @@ bool isWinner(int row, int col){
         acum++;
         n2Col--;
     }
+    if (acum > 3)
+        return true;
+    acum = 1;
     //vertical
     while (gameArea[row][col] == gameArea[nRow][col])
     {
@@ -176,35 +180,43 @@ bool isWinner(int row, int col){
         acum++;
         n2Row--;
     }
+    if (acum > 3)
+        return true;
+    acum = 1;
     //diagonales
     while (gameArea[row][col] == gameArea[n1Row][n1Col])
     {
-        acum =1;
+
         acum++;
         n1Col++;
         n1Row--;
+        
     }
     while (gameArea[row][col] == gameArea[N2Row][N2Col])
     {
-        acum=1;
+
         acum++;
         N2Col--;
         N2Row++;
     }
+        if (acum > 3)
+        return true;
+    acum = 1;
     while (gameArea[row][col] == gameArea[NRow][NCol])
     {
-        acum=1;
+
         acum++;
         NCol--;
         NRow--;
     }
     while (gameArea[row][col] == gameArea[N1Row][N1Col])
     {
-        acum=1;
+
         acum++;
         N1Col++;
         N1Row++;
     }
+
     if (acum == 4)
     {
         return true;
