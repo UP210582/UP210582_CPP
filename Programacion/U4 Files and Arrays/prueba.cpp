@@ -139,10 +139,21 @@ void setCol(int row, int col)
 
 bool isWinner(int row, int col){
 
+
     bool isWinner = false;
     int acum = 1;
     int nCol = col + 1;
     int n2Col = col - 1;
+    int nRow = row + 1;
+    int n2Row = row - 1;
+    int NRow = row - 1;
+    int NCol = col - 1;
+    int N1Row = row + 1;
+    int N1Col = col + 1;
+    int n1Row = row - 1;
+    int n1Col = col + 1;
+    int N2Row = row + 1;
+    int N2Col = col - 1;
     //horizontal
     while (gameArea[row][col] == gameArea[row][nCol])
     {
@@ -154,17 +165,6 @@ bool isWinner(int row, int col){
         acum++;
         n2Col--;
     }
-    if (acum == 4)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-    acum = 1;
-    int nRow = row + 1;
-    int n2Row = row - 1;
     //vertical
     while (gameArea[row][col] == gameArea[nRow][col])
     {
@@ -176,52 +176,31 @@ bool isWinner(int row, int col){
         acum++;
         n2Row--;
     }
-    if (acum == 4)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-    acum = 1;
-    int n1Row = row - 1;
-    int n1Col = col + 1;
-    int N2Row = row + 1;
-    int N2Col = col - 1;
+    //diagonales
     while (gameArea[row][col] == gameArea[n1Row][n1Col])
     {
+        acum =1;
         acum++;
         n1Col++;
         n1Row--;
     }
     while (gameArea[row][col] == gameArea[N2Row][N2Col])
     {
+        acum=1;
         acum++;
         N2Col--;
         N2Row++;
     }
-    if (acum == 4)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-    acum = 1;
-    int NRow = row - 1;
-    int NCol = col - 1;
-    int N1Row = row + 1;
-    int N1Col = col + 1;
     while (gameArea[row][col] == gameArea[NRow][NCol])
     {
+        acum=1;
         acum++;
         NCol--;
         NRow--;
     }
     while (gameArea[row][col] == gameArea[N1Row][N1Col])
     {
+        acum=1;
         acum++;
         N1Col++;
         N1Row++;
