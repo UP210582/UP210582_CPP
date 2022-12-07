@@ -140,7 +140,7 @@ void setCol(int row, int col)
 bool isWinner(int row, int col){
 
     bool isWinner = false;
-    int acum = 0;
+    int acum = 1;
     int nCol = col + 1;
     int n2Col = col - 1;
     //horizontal
@@ -162,9 +162,10 @@ bool isWinner(int row, int col){
     {
         return false;
     }
-    acum = 0;
+    acum = 1;
     int nRow = row + 1;
     int n2Row = row - 1;
+    //vertical
     while (gameArea[row][col] == gameArea[nRow][col])
     {
         acum++;
@@ -183,7 +184,7 @@ bool isWinner(int row, int col){
     {
         return false;
     }
-    acum = 0;
+    acum = 1;
     int n1Row = row - 1;
     int n1Col = col + 1;
     int N2Row = row + 1;
@@ -208,7 +209,7 @@ bool isWinner(int row, int col){
     {
         return false;
     }
-    acum = 0;
+    acum = 1;
     int NRow = row - 1;
     int NCol = col - 1;
     int N1Row = row + 1;
