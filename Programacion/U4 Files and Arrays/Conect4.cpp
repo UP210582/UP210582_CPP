@@ -16,7 +16,7 @@ Last Modification: 24/11/2022
 #include <unistd.h>
 #include <iostream>
 #include <stdio.h>
-#include <PresentationComponents.h>
+//#include <PresentationComponents.h>
 
 using namespace std;
 
@@ -138,14 +138,14 @@ int main()
 void doBoard()
 {
 
-    char board[22][43];
+    char board[25][43];
     char number[1][7] = { '1','2','3','4','5','6','7'};
     int z = 0;
     int w = 0;
 
     for (int i = 0; i < 1; i++)
     {
-        gotoxy(8, 8 + i);
+        //gotoxy(8, 8 + i);
         for (int j = 0; j < 7; j++)
         {
             cout << "   ";
@@ -159,7 +159,7 @@ void doBoard()
 
     for (int row = 0; row < 25; row++)
     {
-        gotoxy(10, 10 + row);
+        //gotoxy(10, 10 + row);
         for (int col = 0; col < 43; col++)
         {
 
@@ -192,10 +192,10 @@ void doBoard()
                 }
             }
         }
-
-        z++;
-        w = 0;
+        cout << endl;
     }
+    z++;
+    w = 0;
 }
 
 int selectCol()
@@ -380,11 +380,8 @@ bool checkNegativeDiagonallyMoves(int row, int col)
     }
 }
 
-<<<<<<< HEAD
-bool isWinner()
-=======
+//bool isWinner()
 bool isWinner(string board)
->>>>>>> fe485053652b7052898e5e47d08903762d3dbd0d
 {
     if (board == BOARD)
     {
@@ -416,11 +413,10 @@ bool isWinner(string board)
         {
             return true;
         }
-    }else 
+    }
+    else 
     return false;
 }
-<<<<<<< HEAD
-=======
 
 int selectColPC()
 {
@@ -492,4 +488,3 @@ int getBetterCol(string player){
     }
     return col;
 }
->>>>>>> fe485053652b7052898e5e47d08903762d3dbd0d
