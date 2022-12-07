@@ -19,24 +19,37 @@ char gameArea[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '},
 
 int main()
 {   
-    int busyRow=-1;
+    
     bool winner = false;
+    int row;
     doBoard();
-    selectCol();
-    busyRow= checkBusyRow(col);
-    if (busyRow==-1){
-        cout << "Select other coulum: ";
-    }else {
-        do{
-            setCol(row, col);
-            system("clear");
-            doBoard();
-            cout << endl;
-            winner = isWinner(row, col);
-            turn++;
-        }while(turn <= 42 && winner == false);
-    }
-
+    do{
+        selectCol();
+        row=checkBusyRow(col);
+        if (row==-1){
+            cout <<"Select other coulum: ";
+        }
+        setCol(row, col);
+        system ("clear");
+        doBoard();
+        winner= isWinner(row, col);
+        turn++;
+    }while (turn <=42&& winner ==false);
+    if (winner == true)
+    {
+        if (turn % 2 == 0)
+        {
+            cout << "\x1B[38;2;255;151;203m" << "Congrats player 2, you won" << "\x1b[0m" << endl;
+        }
+        else
+        {
+            cout << "\x1B[38;2;255;151;203m" << "Congrats player 1, you won" << "\x1b[0m" << endl;
+        }
+    } else if (winner == false)
+        {
+            cout << "\x1B[38;2;255;151;203m" << "Tontes ninguno gano :/" << "\x1b[0m" << endl;
+        }
+ return 0;
 }
 
 
@@ -89,7 +102,7 @@ void doBoard()
 
 int selectCol()
 {
-    cout << "Player  " << turn % 2 << endl;
+    cout << "Player  " << turn % 2+1 << endl;
     cout << "Choose a column: ";
     cin >> col;
     col--;
@@ -110,7 +123,7 @@ int checkBusyRow(int col)
             return row;
         }
     }
-    return -1;
+return -1;
 }
 
 void setCol(int row, int col)
@@ -120,14 +133,17 @@ void setCol(int row, int col)
         value = '0';
     else
         value = 'O';
+    gameArea[row][col] = value;
 }
 
 
 bool isWinner(int row, int col){
+
     bool isWinner = false;
-    int coulum = col, acum = 0;
+    int acum = 0;
     int nCol = col + 1;
     int n2Col = col - 1;
+    //horizontal
     while (gameArea[row][col] == gameArea[row][nCol])
     {
         acum++;
@@ -137,6 +153,77 @@ bool isWinner(int row, int col){
     {
         acum++;
         n2Col--;
+    }
+    if (acum == 4)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    acum = 0;
+    int nRow = row + 1;
+    int n2Row = row - 1;
+    while (gameArea[row][col] == gameArea[nRow][col])
+    {
+        acum++;
+        nRow++;
+    }
+    while (gameArea[row][col] == gameArea[n2Row][col])
+    {
+        acum++;
+        n2Row--;
+    }
+    if (acum == 4)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    acum = 0;
+    int n1Row = row - 1;
+    int n1Col = col + 1;
+    int N2Row = row + 1;
+    int N2Col = col - 1;
+    while (gameArea[row][col] == gameArea[n1Row][n1Col])
+    {
+        acum++;
+        n1Col++;
+        n1Row--;
+    }
+    while (gameArea[row][col] == gameArea[N2Row][N2Col])
+    {
+        acum++;
+        N2Col--;
+        N2Row++;
+    }
+    if (acum == 4)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    acum = 0;
+    int NRow = row - 1;
+    int NCol = col - 1;
+    int N1Row = row + 1;
+    int N1Col = col + 1;
+    while (gameArea[row][col] == gameArea[NRow][NCol])
+    {
+        acum++;
+        NCol--;
+        NRow--;
+    }
+    while (gameArea[row][col] == gameArea[N1Row][N1Col])
+    {
+        acum++;
+        N1Col++;
+        N1Row++;
     }
     if (acum == 4)
     {
