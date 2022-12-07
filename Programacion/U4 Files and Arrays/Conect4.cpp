@@ -6,10 +6,21 @@ Authors:    Paulina Jaqueline Alvarez Martinez
 
 Email:  up210374@alumnos.upa.edu.mx
         up210300@alumnos.upa.edu.mx
-        up210582@alumnos.upa.edu.mx
-Description: Game of Conect 4
+// used bookstores
+#include <iostream>
+#include <unistd.h>
+Last Modification: 24/11/2022
 Last Modification: 24/11/2022
 */
+
+// used bookstores
+#include <iostream>
+
+// used bookstores
+#include <iostream>
+
+// used bookstores
+#include <iostream>
 
 // used bookstores
 #include <iostream>
@@ -23,12 +34,8 @@ using namespace std;
 void doBoard();
 int selectCol();
 int checkBusyRow(int, string);
-bool checkHorizaontalMoves(int, int);
-bool checkVerticalMoves(int, int);
-bool checkPositiveDiagonallyMoves(int, int);
-bool checkNegativeDiagonallyMoves(int, int);
 void setCol(int, int, string, string);
-bool isWinner(string);
+bool isWinner(int, int, string);
 int getColPC();
 void coleBoard();
 int getBetterCol(string);
@@ -55,14 +62,8 @@ const string IMGBOARD = "Imaginary";
 
 int main()
 {
-    bool winner = false;
-    char option;
-    cout << "Press Y to play or X to exit the game:  ";
-    cin >> option;
-    if (option == 'Y' || option == 'y')
-    {
-        int gameType = 1;
-        int busyRow = -1;
+    
+    int gameType = 1;
         cout << "\x1B[38;2;255;151;203m"
              << "Menu"
              << "\x1b[0m" << endl;
@@ -81,15 +82,15 @@ int main()
             {
                 if (turn % 2 == 0)
                 {
-                    col = selectCol();
+                    col = selectColPC();
                 }
                 else
                 {
-                    col = selectColPC();
+                    col = selectCol();
                 }
             }
-            busyRow = checkBusyRow(col, BOARD);
-            if (busyRow == -1)
+            row = checkBusyRow(col, BOARD);
+            if (row == -1)
             {
                 cout << "Please, select other coulum: ";
             }
@@ -99,7 +100,7 @@ int main()
                 system("clear");
                 doBoard();
                 cout << endl;
-                winner = isWinner(BOARD);
+                winner = isWinner(row, col, BOARD);
                 turn++;
             }
         } while (turn <= 42 && winner == false);
@@ -124,14 +125,8 @@ int main()
                  << "Tontes ninguno gano :/"
                  << "\x1b[0m" << endl;
         }
-    }
-    else
-    {
-        cout << endl;
-        cout << "\x1B[38;2;255;151;203m"
-             << "I didn't even want you to play :D"
-             << "\x1b[0m" << endl;
-    }
+    
+    
     return 0;
 }
 
@@ -200,7 +195,7 @@ void doBoard()
 
 int selectCol()
 {
-    cout << "Player  " << turn % 2 << endl;
+    cout << "Player  " << turn % 2 + 1 << endl;
     cout << "Choose a column: ";
     cin >> col;
     col--;
@@ -216,7 +211,7 @@ int checkBusyRow(int col, string board)
 {
     if (board == BOARD)
     {
-        for (int row = 5; row > 0; row--)
+        for (int row = 5; row >= 0; row--)
         {
             if (gameArea[row][col] == ' ')
             {
@@ -226,7 +221,7 @@ int checkBusyRow(int col, string board)
     }
     else if (board == IMGBOARD)
     {
-        for (int row = 5; row > 0; row--)
+        for (int row = 5; row >= 0; row--)
         {
             if (gameAreaIMG[row][col] == ' ')
             {
@@ -262,50 +257,72 @@ void setCol(int row, int col, string board, string player)
     }
 }
 
-bool checkHorizontalMoves(int row, int col)
-{
+bool isWinner(int row, int col, string board){
+   if (board==BOARD){
     bool isWinner = false;
-    int coulum = col, acum = 0;
+    int acum = 1;
     int nCol = col + 1;
     int n2Col = col - 1;
+    int nRow = row + 1;
+    int n2Row = row - 1;
+    int pRow=row-1;
+    int pCol=col+1;
+    int n1Row=row+1;
+    int n1Col=col-1;
+    int n3Row=row-1;
+    int n3Col=col-1;
+    int n4Row=row+1;
+    int n4Col=col+1;
+    
+    //horizontal
     while (gameArea[row][col] == gameArea[row][nCol])
     {
         acum++;
         nCol++;
     }
-    coulum = col;
     while (gameArea[row][col] == gameArea[row][n2Col])
     {
         acum++;
         n2Col--;
     }
-    if (acum == 4)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-bool checkVerticalMoves(int row, int col)
-{
-    bool isWinner = false;
-    int row1 = row, acum = 0;
-    int nRow = row + 1;
-    int n2Row = row - 1;
+    
+    //vertical
     while (gameArea[row][col] == gameArea[nRow][col])
     {
         acum++;
         nRow++;
     }
-    row1 = row;
     while (gameArea[row][col] == gameArea[n2Row][col])
     {
         acum++;
         n2Row--;
     }
+    //diagonales
+    while (gameArea[row][col] == gameArea[pRow][pCol])
+    {
+        acum++;
+        pRow--;
+        pCol++;
+        
+    }
+    while (gameArea[row][col] == gameArea[n1Row][n1Col])
+    {
+        acum++;
+        n1Row++;
+        n1Col--;
+    }
+    while (gameArea[row][col] == gameArea[n3Row][n3Col])
+    {
+        acum++;
+        n2Row--;
+        n2Col--;
+    }
+    while (gameArea[row][col] == gameArea[n4Row][n4Col])
+    {
+        acum++;
+        n3Row++;
+        n3Col++;
+    }
     if (acum == 4)
     {
         return true;
@@ -314,29 +331,70 @@ bool checkVerticalMoves(int row, int col)
     {
         return false;
     }
-}
-
-bool checkPositiveDiagonallyMoves(int row, int col)
-{
-    bool isWinner = false;
-    int coulum = col, row1 = row, acum = 0;
-    int nRow = row - 1;
+   }else if (board==IMGBOARD){
+     bool isWinner = false;
+    int acum = 1;
     int nCol = col + 1;
-    int n2Row = row + 1;
     int n2Col = col - 1;
-    while (gameArea[row][col] == gameArea[nRow][nCol])
+    int nRow = row + 1;
+    int n2Row = row - 1;
+    int pRow=row-1;
+    int pCol=col+1;
+    int n1Row=row+1;
+    int n1Col=col-1;
+    int n3Row=row-1;
+    int n3Col=col-1;
+    int n4Row=row+1;
+    int n4Col=col+1;
+    
+    //horizontal
+    while (gameArea[row][col] == gameArea[row][nCol])
     {
         acum++;
         nCol++;
-        nRow--;
     }
-    coulum = col;
-    row1 = row;
-    while (gameArea[row][col] == gameArea[n2Row][n2Col])
+    while (gameArea[row][col] == gameArea[row][n2Col])
     {
         acum++;
         n2Col--;
-        n2Row++;
+    }
+    
+    //vertical
+    while (gameArea[row][col] == gameArea[nRow][col])
+    {
+        acum++;
+        nRow++;
+    }
+    while (gameArea[row][col] == gameArea[n2Row][col])
+    {
+        acum++;
+        n2Row--;
+    }
+    //diagonales
+    while (gameArea[row][col] == gameArea[pRow][pCol])
+    {
+        acum++;
+        pRow--;
+        pCol++;
+        
+    }
+    while (gameArea[row][col] == gameArea[n1Row][n1Col])
+    {
+        acum++;
+        n1Row++;
+        n1Col--;
+    }
+    while (gameArea[row][col] == gameArea[n3Row][n3Col])
+    {
+        acum++;
+        n2Row--;
+        n2Col--;
+    }
+    while (gameArea[row][col] == gameArea[n4Row][n4Col])
+    {
+        acum++;
+        n3Row++;
+        n3Col++;
     }
     if (acum == 4)
     {
@@ -346,81 +404,14 @@ bool checkPositiveDiagonallyMoves(int row, int col)
     {
         return false;
     }
+   }
+   return false;
 }
 
-bool checkNegativeDiagonallyMoves(int row, int col)
-{
-    bool isWinner = false;
-    int coulum = col, row1 = row, acum = 0;
-    int nRow = row - 1;
-    int nCol = col - 1;
-    int n2Row = row + 1;
-    int n2Col = col + 1;
-    while (gameArea[row][col] == gameArea[nRow][nCol])
-    {
-        acum++;
-        nCol--;
-        nRow--;
-    }
-    coulum = col;
-    row1 = row;
-    while (gameArea[row][col] == gameArea[n2Row][n2Col])
-    {
-        acum++;
-        n2Col++;
-        n2Row++;
-    }
-    if (acum == 4)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-//bool isWinner()
-bool isWinner(string board)
-{
-    if (board == BOARD)
-    {
-        bool isWinnerHorizontal = false;
-        bool isWinnerVertical = false;
-        bool isWinnerPositiveDiagonally = false;
-        bool isWinnerNegativeDiagonally = false;
-        isWinnerHorizontal = checkHorizaontalMoves;
-        isWinnerVertical = checkVerticalMoves;
-        isWinnerPositiveDiagonally = checkPositiveDiagonallyMoves;
-        isWinnerNegativeDiagonally = checkNegativeDiagonallyMoves;
-        if (isWinnerHorizontal == true || isWinnerVertical == true || isWinnerPositiveDiagonally == true || isWinnerNegativeDiagonally == true)
-        {
-            return true;
-        }
-        return false;
-    }
-    else if (board == IMGBOARD)
-    {
-        bool isWinnerHorizontal = false;
-        bool isWinnerVertical = false;
-        bool isWinnerPositiveDiagonally = false;
-        bool isWinnerNegativeDiagonally = false;
-        isWinnerHorizontal = checkHorizaontalMoves;
-        isWinnerVertical = checkVerticalMoves;
-        isWinnerPositiveDiagonally = checkPositiveDiagonallyMoves;
-        isWinnerNegativeDiagonally = checkNegativeDiagonallyMoves;
-        if (isWinnerHorizontal == true || isWinnerVertical == true || isWinnerPositiveDiagonally == true || isWinnerNegativeDiagonally == true)
-        {
-            return true;
-        }
-    }
-    else 
-    return false;
-}
 
 int selectColPC()
 {
-    bool busyRow = false;
+    int busyRow = -1;
     int col;
     srand(time(NULL));
     col = getBetterCol(PC);
@@ -436,8 +427,8 @@ int selectColPC()
     do
     {
         col = 1 + rand() % 7;
-        busyRow = checkBusyRow(col, BOARD);
-    } while (busyRow == true);
+        row = checkBusyRow(col, BOARD);
+    } while (row !=-1);
     return col;
 }
 
@@ -462,10 +453,10 @@ int getBetterCol(string player){
         do
         {
             col++;
-            busyRow=checkBusyRow(col, IMGBOARD);
-            if (busyRow== false){
+            row=checkBusyRow(col, IMGBOARD);
+            if (row== -1){
                 setCol(col, row, IMGBOARD, PC);
-                winner = isWinner (IMGBOARD);
+                winner = isWinner (row, col, IMGBOARD);
             }
             cloneBoard();
         } while (col <= 7 && winner == false );
@@ -475,10 +466,10 @@ int getBetterCol(string player){
         do
         {
             col++;
-            busyRow=checkBusyRow(col, IMGBOARD);
-            if (busyRow== false){
+            row=checkBusyRow(col, IMGBOARD);
+            if (row!=-1){
                 setCol(col, row, IMGBOARD, PERSON);
-                winner = isWinner(IMGBOARD);
+                winner = isWinner(row, col, IMGBOARD);
             }
             cloneBoard();
         } while (col <= 7 && winner == false);
