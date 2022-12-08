@@ -101,13 +101,39 @@ alt="Sourcerer" width=300>
 <div align= "center">
 
 ## Development
-</div>
 
+Cover and start of the game
 
+<img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/con1.png
+alt="Sourcerer" width=300>
+
+Rules and Objetives of the game
+
+To enter this mode, simply select option 2 to enter the rules
+
+<img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/con2.png
+alt="Sourcerer" width=300>
+
+Menu of the game Selection
+for play to single player put 2
+for play multi player put 1
+
+<img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/con3.png
+alt="Sourcerer" width=300>
+
+Mode of game Multi player and show the won is player 1
+
+<img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/con4.png
+alt="Sourcerer" width=300>
+
+Mode of game Single player and show the won is a machine
+
+<img src=https://github.com/UP210582/UP210582_CPP/blob/main/Imagenes/con5.png
+alt="Sourcerer" width=300>
+
+when you are play the game shows a messages and you cans view in the right of the board
 
 [Index](#Index) 
-
-<div align= "center">
 
 ## Conclusions
 </div>
